@@ -1,0 +1,165 @@
+body{
+    
+    background-color: #d1d5db;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 4rem;
+}
+
+header{
+    margin-top: 3rem;
+    border-bottom: solid 5px #d97706;
+    border-radius: 5px;
+}
+
+.header-design{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons-postions{
+    display: flex;
+    gap: 15px;
+}
+.icon-img{
+    width: 5rem;
+}
+
+.container-ul{
+    display: flex;
+    gap: 5rem;
+    
+}
+
+li{
+    list-style: none;
+}
+
+.btns{
+    border-style: none;
+    background-color: #d1d5db;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #18181b;
+}
+.btns:hover{
+    text-decoration: underline;
+    transition: 0.4s ease-in-out;
+}
+
+.container-title{
+    height: 65vh;
+    background-image: url('../public/salon.avif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 95rem;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.container-title h1{
+    font-size: 5rem;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    color: #d1d5db;
+    
+}
+
+aside{
+    float: left;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.ul-aside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.aside-btns{
+    font-size: 20px;
+    margin-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    border-style: none;
+    font-weight: 750;
+    cursor: pointer;
+    color: #3f3f46;
+}
+
+.aside-btns:hover{
+    background-color: #d97706;
+    color: #e2e8f0;
+    transition: 0.3s ease-in-out;
+}
+
+.aside-icons{
+    width: 5rem;
+}
+
+
+.ul-images{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ash-gray, .treatment, .bob-cut{
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.ul-images h2{
+    font-weight: 500;
+}
+.ul-images li, h2{
+    text-align: center;
+}
+
+.bob-cut, .treatment, .ash-gray{
+    width: 200px;
+}
+
+.prices-container{
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prices-container p{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.prices-container button{
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 550;
+    font-size: 17px;
+    border-radius: 15px;
+    border-style: none;
+    cursor: pointer;
+    background-color: #d97706;
+    color: #e2e8f0;
+}
+
+.prices-container button:hover{
+    background-color: #e2e8f0;
+    color: #d97706;
+    transition: 0.3s ease-in-out;
+}
