@@ -1,0 +1,144 @@
+body{
+    
+    background-color: #d1d5db;
+    
+}
+
+.header-title{
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    
+}
+
+.log-in-position{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.title-log-in{
+    text-align: center;
+    color: #e7e5e4;
+    text-transform: uppercase;
+    font-weight: 750;
+    font-size: 37px;
+}
+
+.login-label{
+    display: block;
+    text-align: left;
+    width: 84%;
+    text-transform: uppercase;
+    font-weight: 550;
+    letter-spacing: 1px;
+    color: #a1a1aa;
+}
+
+.login-email{
+    width: 25rem;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: #1c1917;
+    background-color: #737373;
+}
+
+.login-email:focus{
+    outline: none;
+    color: #1c1917;
+    background-color: #737373;
+    
+}
+
+.label-password{
+    display: block;
+    text-align: left;
+    width: 84%;
+    text-transform: uppercase;
+    font-weight: 550;
+    letter-spacing: 1px;
+    color: #a1a1aa;
+}
+
+.password-inputs{
+    width: 25rem;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: #1c1917;
+    background-color: #737373; 
+}
+
+.log-in-btn{
+    width: 20rem;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+    font-weight: 850;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+    background-color:#525252 ;
+    color: #27272a;
+}
+.log-in-btn:hover{
+    background-color: #27272a;
+    color: #525252;
+    transition: 0.3s ease-in-out;
+}
+
+.p-login{
+    color: #78716c;
+}
+
+
+.a-signup{
+    font-weight: 950;
+    cursor: pointer;
+
+}
+.a-signup:hover{
+    color: #262626;
+    transition: 0.2s ease;
+}
+a{
+    text-decoration: none;
+    color: #a8a29e;
+}
+
+.form-login{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.border-login{
+    border-style: solid;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 30rem;
+    height: 25rem;
+    background-color: #020617;
+    border-radius: 15px;
+    border-style: none;
+}
+
+@media (max-width: 575.98px) {
+    .h1-login{
+        font-size: 35px;
+        margin-top: 40px;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    
+}

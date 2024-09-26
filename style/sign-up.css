@@ -1,0 +1,148 @@
+body{
+    
+    background-color: #d1d5db;
+    
+}
+
+
+.header-titles{
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;;
+}
+
+.h1-signup{
+    text-align: center;
+    color: #e7e5e4;
+    text-transform: uppercase;
+    font-weight: 750;
+    font-size: 30px;
+}
+
+.signup-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.border-signup{
+    border-style: solid;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 30rem;
+    height: 25rem;
+    background-color: #020617;
+    border-radius: 15px;
+    border-style: none;
+}
+
+.form-signup{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label-names{
+    display: block;
+    text-align: left;
+    width: 84%;
+    text-transform: uppercase;
+    font-weight: 550;
+    letter-spacing: 1px; 
+    color: #a1a1aa;
+}
+.input-names{
+    width: 25rem;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: #1c1917;
+    background-color: #737373; 
+}
+.label-emails{
+    display: block;
+    text-align: left;
+    width: 84%;
+    text-transform: uppercase;
+    font-weight: 550;
+    letter-spacing: 1px;  
+    color: #a1a1aa;
+}
+
+.input-emails{
+    width: 25rem;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: #1c1917;
+    background-color: #737373; 
+}
+
+.label-password{
+    display: block;
+    text-align: left;
+    width: 84%;
+    text-transform: uppercase;
+    font-weight: 550;
+    letter-spacing: 1px; 
+    color: #a1a1aa;
+}
+
+.input-password{
+    width: 25rem;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: #1c1917;
+    background-color: #737373;
+}
+
+.signup-btn{
+    width: 20rem;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+    font-weight: 850;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+    background-color:#525252 ;
+    color: #27272a;
+}
+.signup-btn:hover{
+    background-color: #27272a;
+    color: #525252;
+    transition: 0.3s ease-in-out;
+}
+
+.p-signup{
+    color: #78716c;
+}
+
+a{
+    text-decoration: none;
+    color: #a8a29e;
+}
+.signup-a{
+    font-weight: 900;
+    cursor: pointer;
+
+}
+.signup-a:hover{
+    color: #525252;
+    transition: 0.2s ease;
+}

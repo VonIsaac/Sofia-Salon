@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/sign-up.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header-titles">
+        <h1>Sofia Salon</h1>
+    </header>
+
+    <main class="signup-center">
+        <div class="border-signup">
+            <h1 class="h1-signup">Create New Account</h1>
+            <form id="signupForm" class="form-signup">
+                <label for="name" class="label-names">Name</label>
+                <input type="text" name="name" id="name" class="input-names">
+
+                <label for="email" class="label-emails">Email</label>
+                <input type="email" name="email" id="email" class="input-emails" required>
+
+                <label for="password" class="label-password">Password</label>
+                <input type="password" name="password" id="password" class="input-password" required>
+
+                <button type="submit" class="signup-btn">Sign Up</button>
+                <p class="p-signup">Already Registered? <a href="/log-in.html" class="signup-a">Log in</a></p>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
