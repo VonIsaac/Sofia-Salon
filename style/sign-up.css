@@ -32,7 +32,7 @@ body{
     padding-right: 15px;
     width: 30rem;
     height: 25rem;
-    background-color: #020617;
+    background-color: #000000;
     border-radius: 15px;
     border-style: none;
 }
@@ -51,7 +51,7 @@ body{
     text-transform: uppercase;
     font-weight: 550;
     letter-spacing: 1px; 
-    color: #a1a1aa;
+    color: #FFFFFF;
 }
 .input-names{
     width: 25rem;
@@ -72,7 +72,7 @@ body{
     text-transform: uppercase;
     font-weight: 550;
     letter-spacing: 1px;  
-    color: #a1a1aa;
+    color: #FFFFFF;
 }
 
 .input-emails{
@@ -95,7 +95,7 @@ body{
     text-transform: uppercase;
     font-weight: 550;
     letter-spacing: 1px; 
-    color: #a1a1aa;
+    color: #FFFFFF;
 }
 
 .input-password{
@@ -120,7 +120,7 @@ body{
     border-radius: 5px;
     border-style: none;
     cursor: pointer;
-    background-color:#525252 ;
+    background-color:#FFFFFF ;
     color: #27272a;
 }
 .signup-btn:hover{

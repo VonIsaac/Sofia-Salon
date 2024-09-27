@@ -87,7 +87,7 @@ aside{
     
 }
 .aside-btns{
-    font-size: 20px;
+    font-size: 20px;    
     margin-bottom: 25px;
     padding-left: 25px;
     padding-right: 25px;
@@ -98,6 +98,8 @@ aside{
     font-weight: 750;
     cursor: pointer;
     color: #3f3f46;
+    text-decoration: none;
+    background-color: #FFFFFF;
 }
 
 .aside-btns:hover{
@@ -107,7 +109,7 @@ aside{
 }
 
 .aside-icons{
-    width: 5rem;
+   margin: 15px 0 0;
 }
 
 
@@ -162,4 +164,8 @@ aside{
     background-color: #e2e8f0;
     color: #d97706;
     transition: 0.3s ease-in-out;
+}
+
+a {
+    text-decoration: none;
 }
