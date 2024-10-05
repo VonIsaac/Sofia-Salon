@@ -1,13 +1,13 @@
 body{
     
     background-color: #d1d5db;
-    margin-left: 4rem;
-    margin-right: 4rem;
-    margin-bottom: 4rem;
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-bottom: 64px;
 }
 
 header{
-    margin-top: 3rem;
+    margin-top: 48px;
     border-bottom: solid 5px #d97706;
     border-radius: 5px;
 }
@@ -23,12 +23,12 @@ header{
     gap: 15px;
 }
 .icon-img{
-    width: 5rem;
+    width: 80px;
 }
 
 .container-ul{
     display: flex;
-    gap: 5rem;
+    gap: 95px;
     
 }
 
@@ -36,7 +36,7 @@ li{
     list-style: none;
 }
 
-.btns{
+.a-tags{
     border-style: none;
     background-color: #d1d5db;
     font-size: 20px;
@@ -61,6 +61,7 @@ li{
     width: 95rem;
     margin-left: 20px;
     margin-right: 20px;
+    
 }
 
 .container-title h1{
@@ -69,7 +70,7 @@ li{
     justify-content: center;
     align-items: center;
     height: 50vh;
-    color: #d1d5db;
+    color: #a3a3a3;
     
 }
 
@@ -168,4 +169,123 @@ aside{
 
 a {
     text-decoration: none;
+}
+
+
+@media (max-width: 767.98px) {
+    body{
+        width: 100%;      /* Take full width on mobile */
+        margin: 15px ;        /* Remove large margins on mobile */
+        padding: 0px; 
+    }
+    header{
+        border-bottom: solid 5px #d97706;
+        width: 75rem;
+    }
+    .icon-img{
+        width: 70px;
+        height: 65px;
+    }
+
+    .icons-postions h1{
+        font-size: 25px;
+    }
+
+    .container-ul{
+        font-size: 20px;
+        gap: 50px;
+    }
+
+    .a-tags{
+        font-size: 15px;
+    }
+
+    .header-design{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+        
+    }
+   
+    .container-title{
+        width: 700px;
+        height: 550px;
+    }
+
+    .container-title h1{
+        display: flex ;
+        justify-content: center;
+        align-items: center;
+        height: 65vh;
+        font-size: 60px;
+    }
+    
+    aside{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .aside-btns{
+        font-size: 16px;    
+        margin-bottom: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 20px;
+        border-style: none;
+    }
+
+    .aside-icons{
+        width: 85px;
+    }
+
+    .ul-aside{
+        padding-left: 10px;
+    }
+
+    .ul-images{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .bob-cut, .treatment, .ash-gray{
+        width: 120px;
+    }
+
+    .treatment, .bob-cut{
+        width: 110px;
+    }
+
+    .ul-images{
+        padding-left: 0px;
+    }
+
+    .ul-images{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .ul-images h2{
+        font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .prices-container p{
+        font-size: 15px;
+    }
+
+    .prices-container button{
+        font-size: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 10px;
+    }
+
+}
+
+@media  (min-width: 576px){
+
 }
