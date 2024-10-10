@@ -33,6 +33,7 @@
                     <a class="a-tags">Contact</a>
                 </li>
             </ul>
+            <img src="./public/hamburger.png" onclick="togglemenu()" alt="icon" class="menu-icon">
         </div>
     </header>
 
@@ -94,5 +95,11 @@
            </ul>
         </div>
     </main>
+    <script>
+        function togglemenu() {
+            const menu = document.querySelector('.container-ul'); // Select the menu
+            menu.classList.toggle('show'); // Toggle the 'show' class
+        }
+    </script>
 </body>
 </html>

@@ -53,6 +53,11 @@ li{
     transition: 0.4s ease-in-out;
 }
 
+.menu-icon{
+    width: 45px;
+    display: none;
+}
+
 .container-title{
     height: 65vh;
     background-image: url('../public/salon.avif');
@@ -296,6 +301,37 @@ a {
 }
 
 @media(max-width: 576px){
+    .container-ul {
+        display: none; /* Hide the menu by default */
+        flex-direction: column; /* Stack the menu items vertically */
+        position: absolute;
+        top: 85px; /* Position the menu below the header */
+        right: 0;
+        left: 4%;
+        background-color: #d1d5db;
+        width: 100%;
+        gap: 20px;
+        padding: 20px;
+        z-index: 1;
+        transition: 0.5s;
+      
+        justify-content: center;
+        align-items: center;  
+    }
+
+    /* Show the menu when 'show' class is added */
+    .container-ul.show {
+        display: flex;
+    }
+
+    /* Display the burger menu icon */
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+
+
     .container-title{
         width: 560px;
         height: 850px
