@@ -314,7 +314,6 @@ a {
         padding: 20px;
         z-index: 1;
         transition: 0.5s;
-      
         justify-content: center;
         align-items: center;  
     }
@@ -329,8 +328,6 @@ a {
         display: block;
         cursor: pointer;
     }
-
-
 
     .container-title{
         width: 560px;

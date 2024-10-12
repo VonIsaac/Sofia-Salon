@@ -1,0 +1,81 @@
+body{
+    background-color: #d1d5db;
+
+    
+}
+header{
+    margin-top: 48px;
+    border-bottom: solid 5px #d97706;
+    border-radius: 5px;
+}
+
+.header-design{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons-postions{
+    display: flex;
+
+    gap: 15px;
+}
+.icon-img{
+    width: 80px;
+}
+
+.container-ul{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 95px;
+    
+}
+
+li{
+    list-style: none;
+}
+
+.a-tags{
+    border-style: none;
+    background-color: #d1d5db;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #18181b;
+}
+.a-tags:hover{
+    text-decoration: underline;
+    transition: 0.4s ease-in-out;
+}
+
+.menu-icon{
+    width: 45px;
+    display: none;
+}
+
+
+main{
+    margin-top: 25px;
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.main-container{
+    display: grid;
+  grid-template-rows: repeat(4, 1fr); /* 4 equal rows */
+  grid-auto-flow: column; /* Grid flows by columns */
+  gap: 20px; /* Space between grid items (equivalent to gap-5 in Tailwind) */
+}
+
+
+.container-img{
+    width: 150px;
+}
+
