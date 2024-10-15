@@ -1,7 +1,6 @@
 
 const container = document.getElementById('main-container')
 
-
 const data = [
     {
         id: 's1',
@@ -39,7 +38,7 @@ const data = [
     {
         id: 's5',
         img: '../public/services-images/salon-5.jpg',
-        name: 'Facial Treatments:',
+        name: 'Facial Treatments',
         description: 'Cleansing and moisturizing treatments tailored to your skins needs.',
         price: 800
     },
@@ -90,7 +89,7 @@ function displayServices(data){
     const displayAllServices = data.map(items => {
         const btn = document.createElement('button')
         btn.classList.add('btns');
-        btn.textContent = "Avail"
+        
 
         const containerBorderUl = document.createElement('li');
         containerBorderUl.classList.add('container-border')
@@ -127,9 +126,13 @@ function displayServices(data){
         containerBorderUl.appendChild(divs)
 
         //buttons
+        const a = document.createElement("a");
+        a.textContent = 'Avail';
+        a.href = `./services-inputs.html?id=${items.id}`;  // Passing ID via URL
+        btn.appendChild(a)
         divs.appendChild(btn)
 
-       
+        
 
         return containerBorderUl;
 
@@ -138,4 +141,9 @@ function displayServices(data){
     displayAllServices.forEach(services => container.appendChild(services))
 };
 
-displayServices(data)
+displayServices(data);
+
+
+//for apoinments 
+
+

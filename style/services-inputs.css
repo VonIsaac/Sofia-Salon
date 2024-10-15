@@ -1,38 +1,25 @@
+
 body{
     background-color: #d1d5db;
     margin: 0%;
     padding: 0%;
     color: #a8a29e;
+    background-image: url(../public/salon.avif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .container{
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;  
     height: 100vh;
-}
-.container-border{
-    display: flex;
-    flex-direction: column;
-    background-image: url(../public/salon.avif);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 550px;
-    width: 650px;
-    border-radius: 13px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
 }
 
 .container-border h1{
     text-align: center;
-    font-size: 40px;
+    font-size: 85px;
     color: #57534e;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -41,8 +28,8 @@ body{
 
 .container-border p{
     font-weight: 800;
-    color: #3f3f46;
-    font-size: 20px;
+    color: #020617;
+    font-size: 25px;
     margin-left: 10px;
 }
 
@@ -50,11 +37,12 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    
 }
 
 .input-name{
-    width: 360px;
+    width: 500px;
     background-color: #d1d5db;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -67,15 +55,20 @@ form{
     text-align: center;
     margin-top: 13px;
     margin-bottom: 13px;
+    font-size: 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.input-name, .input-number:focus{
+    outline: none;
+}   
 
 .input-name, .input-number:focus{
     outline: none;
 }
 
 .input-number{
-    width: 360px;
+    width: 500px;
     background-color: #d1d5db;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -88,6 +81,7 @@ form{
     text-align: center;
     margin-top: 13px;
     margin-bottom: 13px;
+    font-size: 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -99,7 +93,7 @@ input[type=number]::-webkit-outer-spin-button {
 }   
 
 .input-date{
-    width: 360px;
+    width: 500px;
     background-color: #d1d5db;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -112,10 +106,10 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
     margin-top: 13px;
     margin-bottom: 13px;
+    font-size: 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     
 }
-
 .btns{
     display: flex;
     justify-content: space-between;
@@ -142,7 +136,3 @@ input[type=number]::-webkit-outer-spin-button {
     color: #27272a;
     transition: 0.3s ease-in-out;
 }
-
-
-
-

@@ -150,6 +150,16 @@ main{
     color: #57534e;
     transition: 0.5s ease-in-out;
 }
+
+a {
+    text-decoration: none;
+    color: #171717;
+}
+a:hover{
+    color: #57534e;
+}
+
+
 .container-img{
     width: 150px;
 }
