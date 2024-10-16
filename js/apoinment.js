@@ -26,13 +26,17 @@ document.querySelector('.form-appointment').addEventListener('submit' , async (e
         });
 
         if(!response.ok){
-            alert("Invalid apoinments or something went wrong.");
+            
+            throw new Error(`HTTP error! status: ${response.status}`);
+            
         };
 
-        const saveApointment = await response.json();
+        const saveApointment = await response.json();   
         document.cookie = `service_id=${saveApointment.service_id}; path=/;`
         console.log(saveApointment)
-        alert('Succesfully Set Apointment')
+        if(response.ok){
+            alert('Succesfully Set Apointment')
+        }
         window.location.href = '../features/services.html'
         //clear the inputs fields when done taking apointmenst
        
