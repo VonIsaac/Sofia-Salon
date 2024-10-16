@@ -1,3 +1,5 @@
+alert('Testing')
+
 document.querySelector('.form-signup').addEventListener('submit', async function(event) {
     event.preventDefault();
     // Get form data
