@@ -13,7 +13,6 @@
     <main class="container">
         <div class="container-border">
             <h1>SOFIA SALON</h1>
-            <p>Service Apointment: <span id="services-name"></span></p> 
             <form action="#"  class="form-appointment">
                 <input type="text" name="text" id="customer_name" class="input-name" placeholder="Name">
                 <input type="number" name="number" id="phone_number" class="input-number" placeholder="Phone Number">
@@ -24,38 +23,7 @@
                 </div>
             </form>
         </div>
-        
-       
     </main>
-    <script>
-        // Define the same data array here
-        const data = [
-            { id: 's1', name: 'Haircut and Styling', price: 150 },
-            { id: 's2', name: 'Hair Coloring', price: 1000 },
-            { id: 's3', name: 'Hair Treatments', price: 400 },
-            { id: 's4', name: 'Manicure and Pedicure', price: 300 },
-            { id: 's5', name: 'Facial Treatments', price: 800 },
-            { id: 's6', name: 'Waxing and Hair Removal', price: 450 },
-            { id: 's7', name: 'Makeup Services', price: 1300 },
-            { id: 's8', name: 'Massage Therapy', price: 800 },
-            { id: 's9', name: 'Eyebrow and Eyelash Services', price: 600 },
-            { id: 's10', name: 'Bridal and Event Packages', price: 10000 },
-        ];
-
-        const serviceNameElement = document.getElementById('services-name');
-
-        // Extract the ID from the URL
-        const params = new URLSearchParams(window.location.search);
-        const serviceId = params.get('id');
-
-        // Find the service with the matching ID
-        const service = data.find(service => service.id === serviceId);
-
-        if (service) {
-            // Set the service name in the appointment form
-            serviceNameElement.textContent = service.name;
-        }
-    </script>
     <script src="../js/apoinment.js"></script>
     <script src="../js/index.js"></script>
 
