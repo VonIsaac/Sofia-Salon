@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/checkout.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>HELLO WORLD</h1>
+    <header>
+        <div class="header-design">
+           <div class="icons-postions">
+                <img src="/public/phone-call.png" alt="icon" class="icon-img">
+                <h1>@sofiasalon</h1>
+           </div>
+            <ul class="container-ul">
+                <li>
+                    <a class="a-tags" href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a class="a-tags" href="./features/services.html">Services</a>
+                </li>
+                <li>
+                    <a class="a-tags">Support</a>
+                </li>
+                <li>
+                    <a class="a-tags">About</a>
+                </li>
+                <li>
+                    <a class="a-tags">Contact</a>
+                </li>
+            </ul>
+            
+        </div>
+    </header>
+
+    <main>
+        <h1 class="titles">Apoinment List</h1>
+        <ul id="checkout-container"></ul>
+    </main>
+    <script src="../js/getCookie.js"></script>
+    <script src="../js/checkout.js"></script>
 </body>
 </html>

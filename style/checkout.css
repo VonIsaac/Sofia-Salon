@@ -1,0 +1,131 @@
+body{
+    
+    background-color: #d1d5db;
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-bottom: 64px;
+}
+
+header{
+    margin-top: 48px;
+    border-bottom: solid 5px #d97706;
+    border-radius: 5px;
+}
+
+.header-design{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons-postions{
+    display: flex;
+
+    gap: 15px;
+}
+.icon-img{
+    width: 80px;
+}
+
+.container-ul{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 95px;
+    
+}
+
+li{
+    list-style: none;
+}
+
+.a-tags{
+    border-style: none;
+    background-color: #d1d5db;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #18181b;
+}
+.a-tags:hover{
+    text-decoration: underline;
+    transition: 0.4s ease-in-out;
+}
+
+.titles{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+
+#checkout-container{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    gap: 20px; /* Space between grid items (equivalent to gap-5 in Tailwind) */
+}
+
+.containers{
+    background-color: #78716c;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.names{
+    letter-spacing: 1px;
+    font-weight: 900;
+    color: #020617;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.service{
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: #0f172a;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.ps{
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: #0f172a;
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 13px;
+}
+
+.all-btns{
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    letter-spacing: 0.5px;
+    background-color: #0c0a09;
+    color: #78716c;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.all-btns:hover{
+    background-color: #525252;
+    color: #0c0a09;
+    transition: 0.5s ease-in-out;
+}
+

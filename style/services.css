@@ -86,9 +86,8 @@ main{
 
 #main-container{
     display: grid;
-  grid-template-rows: repeat(2, 1fr); /* 4 equal rows */
-  grid-auto-flow: column; /* Grid flows by columns */
-  gap: 20px; /* Space between grid items (equivalent to gap-5 in Tailwind) */
+    grid-template-columns:repeat(4,1fr);
+    gap: 20px; /* Space between grid items (equivalent to gap-5 in Tailwind) */
 }
 .container-border{
     display: flex;
@@ -116,12 +115,15 @@ main{
     font-weight: 900;
     color: #171717;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 }
 
 .container-description{
     text-align: center;
-    font-weight: 450;
+    font-weight: 600;
     color: #1c1917
 }
 .container-price{

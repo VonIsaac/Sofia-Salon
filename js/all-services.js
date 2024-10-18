@@ -10,14 +10,12 @@ let generateServices =  async () => {
             }
         });
 
-        const textResponse = await response.text(); // Get the response as text
-        console.log('Response text:', textResponse);
-
+      
         if(!response.ok){
             throw new Error(`Network response was not ok ${response.status}`);
         };
 
-        const data = await response.json()
+        const data = await response.json();
         console.log(data)
         displayServices(data)
 
@@ -37,11 +35,11 @@ function displayServices(data) {
         containerBorderUl.classList.add('container-border');
 
         // Create image element and set the data
-       /* const images = document.createElement('img');
-        images.src = items.img;
-        images.alt = items.name;
+        const images = document.createElement('img');
+        images.src = '../public/hair-salon5252.logowik.com.webp';
+        images.alt = 'icons';
         images.classList.add('container-img');
-        containerBorderUl.appendChild(images);*/
+        containerBorderUl.appendChild(images);
 
         // Create name element
         const names = document.createElement('h1');
@@ -78,6 +76,6 @@ function displayServices(data) {
         return containerBorderUl;
     });
 
-    displayAllServices.forEach(services => container.appendChild(services));
+    displayAllServices.forEach(services => serviceContainer.appendChild(services));
 }
 generateServices();
