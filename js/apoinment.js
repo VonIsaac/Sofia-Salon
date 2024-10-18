@@ -1,6 +1,6 @@
 
 
-document.querySelector('.form-appointment').addEventListener('submit' , async (e) => {
+document.querySelector('.form-appointment').addEventListener('submit', async (e) => {
     e.preventDefault();
     //get the name, num, date
     const apointmentName = document.getElementById('customer_name');
@@ -10,38 +10,42 @@ document.querySelector('.form-appointment').addEventListener('submit' , async (e
     const name = apointmentName.value;
     const number = apointmentNumber.value;
     const date = apointmentDate.value;
+    const urlParams = new URLSearchParams(window.location.search);
 
-    try{
+    const serviceId = urlParams.get('id');
+    const userId = getUserId();
+
+    try {
         const response = await fetch('http://localhost/fashion-backend/checkout', {
             method: 'POST',
-            headers:{
+            headers: {
                 'Content-Type': 'application/json',
 
             },
             body: JSON.stringify({
-                username: name,
-                usernumber: number,
-                userdate: date,
+                customer_name: name,
+                phone_number: number,
+                appointment_date: date,
+                user_id: userId,
+                service_id: 1
             })
         });
 
-        if(!response.ok){
-            
+        if (!response.ok) {
+
             throw new Error(`HTTP error! status: ${response.status}`);
-            
+
         };
 
-        const saveApointment = await response.json();   
-        document.cookie = `service_id=${saveApointment.service_id}; path=/;`
-        console.log(saveApointment)
-        if(response.ok){
+
+        if (response.ok) {
             alert('Succesfully Set Apointment')
         }
-        window.location.href = '../features/services.html'
+        // window.location.href = '../features/services.html'
         //clear the inputs fields when done taking apointmenst
-       
 
-    }catch(err){
+
+    } catch (err) {
         alert(`An Error Occured${err.message}`)
         console.log('GOT AN ERROR')
     }

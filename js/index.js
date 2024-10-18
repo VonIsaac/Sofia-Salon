@@ -20,11 +20,17 @@ function deleteCookie(name) {
 }
 
 
+function getUserId(){
+    const userId = getCookie('user_id');
 
-const userId = getCookie('user_id');
+    return userId;
+}
 
 
-if (userId) {
+
+
+
+if (getUserId()) {
     const authButton = document.querySelector('.auth-button');
     authButton.innerHTML = '<a class="aside-btns" href="#" id="logout-btn">Logout</a>';
 
