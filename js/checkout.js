@@ -33,26 +33,24 @@ let checkout = async () => {
 }
     
 function displayCheckout(data) {
-    const checkoutContainer = document.getElementById('checkout-container'); // Make sure you have this element in your HTML
+    const checkoutContainer = document.getElementById('checkout-container'); // Ensure this element exists
 
     const displayAllCheckout = data.map(checkout => {
-        const containerLi = document.createElement('div'); // Use div for grid layout
-        containerLi.classList.add('checkout-item'); // Class for styling
+        const containerLi = document.createElement('div');
+        containerLi.classList.add('checkout-item');
 
- // Create image element and set the data
- const images = document.createElement('img');
- images.src = '../public/hair-salon5252.logowik.com.webp'; // Use placeholder image for now
- images.alt = 'icons';
- images.classList.add('container-img'); // Class for styling
- containerLi.appendChild(images);
+        // Create image element and set the data
+        const images = document.createElement('img');
+        images.src = '../public/hair-salon5252.logowik.com.webp'; // Use placeholder image
+        images.alt = 'icons';
+        images.classList.add('container-img');
+        containerLi.appendChild(images);
 
-        const h1 = document.createElement('h3'); // Use h3 for better semantics
+        const h1 = document.createElement('h3');
         h1.textContent = `Name: ${checkout.customer_name}`;
         h1.classList.add('names');
         containerLi.appendChild(h1);
 
-
-    
         const serviceName = document.createElement('p');
         serviceName.textContent = `Service: ${checkout.service_name}`;
         serviceName.classList.add('service');
@@ -71,6 +69,19 @@ function displayCheckout(data) {
         const editBtn = document.createElement('button');
         editBtn.textContent = 'Edit';
         editBtn.classList.add('btn-edit');
+
+        // Add click event to open the modal
+        editBtn.addEventListener('click', () => {
+            // Set the values in the modal
+            document.getElementById('customerName').value = checkout.customer_name;
+            document.getElementById('serviceName').value = checkout.service_name;
+            document.getElementById('phoneNumber').value = checkout.phone_number;
+
+            // Show the modal
+            const modal = document.getElementById('editModal');
+            modal.style.display = "block";
+        });
+
         btnsDiv.appendChild(editBtn);
 
         // Delete button
@@ -86,6 +97,32 @@ function displayCheckout(data) {
 
     // Append all checkout items to the checkout container
     displayAllCheckout.forEach(checkout => checkoutContainer.appendChild(checkout));
+
+    // Modal functionality
+    const modal = document.getElementById('editModal');
+    const span = document.getElementsByClassName("close")[0];
+
+    // Close the modal when the user clicks on <span> (x)
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Close the modal when the user clicks anywhere outside of the modal
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Handle form submission
+    const editForm = document.getElementById('editForm');
+    editForm.onsubmit = function(event) {
+        event.preventDefault(); // Prevent page refresh
+        // Handle the save changes logic here (e.g., send updated data to the server)
+        
+        // Close the modal after saving
+        modal.style.display = "none";
+    }
 }
 
 

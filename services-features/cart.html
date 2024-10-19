@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/checkout.css">
+    <link rel="stylesheet" href="../style/edit-modal.css">
     <title>Document</title>
 </head>
 <body>
@@ -40,6 +41,27 @@
     <main>
         <h1 class="titles">Apoinment List</h1>
         <div id="checkout-container"></div>
+
+
+
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Edit Checkout</h2>
+                <form id="editForm">
+                    <label for="customerName">Name:</label>
+                    <input type="text" id="customerName" name="customerName" required>
+        
+                    <label for="serviceName">Service:</label>
+                    <input type="text" id="serviceName" name="serviceName" required>
+        
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+        
+                    <button type="submit">Save Changes</button>
+                </form>
+            </div>
+        </div>
     </main>
     <script src="../js/getCookie.js"></script>
     <script src="../js/checkout.js"></script>
