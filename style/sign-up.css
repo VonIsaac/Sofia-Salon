@@ -1,148 +1,132 @@
-body{
-    
+body {
     background-color: #d1d5db;
-    
 }
 
-
-.header-titles{
+.header-titles {
     text-align: center;
     font-size: 30px;
-    text-transform: uppercase;;
+    text-transform: uppercase;
+    margin: 20px 0; /* Added margin for spacing */
 }
 
-.h1-signup{
+.h1-signup {
     text-align: center;
     color: #e7e5e4;
     text-transform: uppercase;
     font-weight: 750;
     font-size: 30px;
+    margin-bottom: 20px; /* Added margin for spacing */
 }
 
-.signup-center{
+.signup-center {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.border-signup{
-    border-style: solid;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 30rem;
-    height: 25rem;
+.border-signup {
+    border: none; /* Removed unnecessary border style */
+    padding: 15px; /* General padding */
+    width: 100%; /* Full width for responsiveness */
+    max-width: 30rem; /* Set a maximum width */
     background-color: #000000;
     border-radius: 15px;
-    border-style: none;
 }
 
-.form-signup{
-    flex-direction: column;
+.form-signup {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.label-names{
+.label-names,
+.label-emails,
+.label-password {
     display: block;
     text-align: left;
-    width: 84%;
+    width: 100%; /* Full width */
     text-transform: uppercase;
     font-weight: 550;
     letter-spacing: 1px; 
     color: #FFFFFF;
+    margin-bottom: 5px; /* Added margin for spacing */
 }
-.input-names{
-    width: 25rem;
-    height: 20px;
-    padding: 5px;
+
+.input-names,
+.input-emails,
+.input-password {
+    width: 100%; /* Full width */
+    height: 40px; /* Increased height for better usability */
+    padding: 8px; /* Increased padding for comfort */
     border-radius: 5px;
     border: none;
     font-weight: 700;
-    margin-top: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Space between inputs */
     color: #1c1917;
     background-color: #737373; 
-}
-.label-emails{
-    display: block;
-    text-align: left;
-    width: 84%;
-    text-transform: uppercase;
-    font-weight: 550;
-    letter-spacing: 1px;  
-    color: #FFFFFF;
+    box-sizing: border-box; /* Include padding in width */
 }
 
-.input-emails{
-    width: 25rem;
-    height: 20px;
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-    font-weight: 700;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    color: #1c1917;
-    background-color: #737373; 
+.input-names:focus,
+.input-emails:focus,
+.input-password:focus {
+    outline: none;
+    background-color: #616161; /* Slightly darker on focus */
 }
 
-.label-password{
-    display: block;
-    text-align: left;
-    width: 84%;
-    text-transform: uppercase;
-    font-weight: 550;
-    letter-spacing: 1px; 
-    color: #FFFFFF;
-}
-
-.input-password{
-    width: 25rem;
-    height: 20px;
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-    font-weight: 700;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    color: #1c1917;
-    background-color: #737373;
-}
-
-.signup-btn{
-    width: 20rem;
-    padding-top: 6px;
-    padding-bottom: 6px;
+.signup-btn {
+    width: 100%; /* Full width */
+    height: 40px; /* Consistent height */
     text-transform: uppercase;
     font-weight: 850;
     border-radius: 5px;
-    border-style: none;
+    border: none;
     cursor: pointer;
-    background-color:#FFFFFF ;
+    background-color: #FFFFFF;
     color: #27272a;
 }
-.signup-btn:hover{
+
+.signup-btn:hover {
     background-color: #27272a;
-    color: #525252;
+    color: #FFFFFF; /* Change text color on hover */
     transition: 0.3s ease-in-out;
 }
 
-.p-signup{
+.p-signup {
     color: #78716c;
+    margin: 10px 0; /* Margin for spacing */
 }
 
-a{
+a {
     text-decoration: none;
     color: #a8a29e;
 }
-.signup-a{
+
+.signup-a {
     font-weight: 900;
     cursor: pointer;
-
 }
-.signup-a:hover{
+
+.signup-a:hover {
     color: #525252;
     transition: 0.2s ease;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 575.98px) {
+    .border-signup {
+        width: 90%; /* Make it more responsive on small screens */
+    }
+
+    .signup-btn {
+        width: 90%; /* Adjust button width */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .border-signup {
+        width: 70%; /* Adjust width for medium screens */
+    }
 }

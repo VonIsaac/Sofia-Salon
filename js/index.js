@@ -32,7 +32,7 @@ function getUserId(){
 
 if (getUserId()) {
     const authButton = document.querySelector('.auth-button');
-    authButton.innerHTML = '<a class="aside-btns" href="#" id="logout-btn">Logout</a>';
+    authButton.innerHTML = '<a class="aside-btns logout" href="#" id="logout-btn">Logout</a>';
 
     // Add event listener to the logout button
     document.getElementById('logout-btn').addEventListener('click', function (event) {

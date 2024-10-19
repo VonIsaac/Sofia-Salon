@@ -1,144 +1,134 @@
-body{
+body {
     background-color: #d1d5db;
-    background-color: #d1d5db;
-    
 }
 
-.header-title{
+.header-title {
     text-align: center;
     font-size: 30px;
     text-transform: uppercase;
-    
+    margin: 20px 0; /* Added margin for spacing */
 }
 
-.log-in-position{
+.log-in-position {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    
 }
-.title-log-in{
+
+.title-log-in {
     text-align: center;
     color: #e7e5e4;
     text-transform: uppercase;
     font-weight: 750;
     font-size: 37px;
+    margin-bottom: 20px; /* Added margin for spacing */
 }
 
-.login-label{
+.border-login {
+    border-style: none; /* Removed border style */
+    padding: 15px; /* General padding for the border */
+    width: 100%; /* Full width for responsiveness */
+    max-width: 30rem; /* Set max width */
+    background-color: #000000;
+    border-radius: 15px;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-label,
+.label-password {
     display: block;
     text-align: left;
-    width: 84%;
+    width: 100%; /* Full width */
     text-transform: uppercase;
     font-weight: 550;
     letter-spacing: 1px;
     color: #FFFFFF;
+    margin-bottom: 5px; /* Added margin for spacing */
 }
 
-.login-email{
-    width: 25rem;
-    height: 20px;
-    padding: 5px;
+.login-email,
+.password-inputs {
+    width: 100%; /* Full width */
+    height: 40px; /* Increased height for better usability */
+    padding: 8px; /* Increased padding for comfort */
     border-radius: 5px;
     border: none;
     font-weight: 700;
-    margin-top: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Space between inputs */
     color: #1c1917;
     background-color: #737373;
+    box-sizing: border-box; /* Include padding in width */
 }
 
-.login-email:focus{
+.login-email:focus,
+.password-inputs:focus {
     outline: none;
-    color: #1c1917;
-    background-color: #737373;
-    
+    background-color: #616161; /* Slightly darker on focus */
 }
 
-.label-password{
-    display: block;
-    text-align: left;
-    width: 84%;
-    text-transform: uppercase;
-    font-weight: 550;
-    letter-spacing: 1px;
-    color: #FFFFFF;
-}
-
-.password-inputs{
-    width: 25rem;
-    height: 20px;
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-    font-weight: 700;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    color: #1c1917;
-    background-color: #737373; 
-}
-
-.log-in-btn{
-    width: 20rem;
-    padding-top: 6px;
-    padding-bottom: 6px;
+.log-in-btn {
+    width: 100%; /* Full width */
+    height: 40px; /* Consistent height */
     text-transform: uppercase;
     font-weight: 850;
     border-radius: 5px;
-    border-style: none;
+    border: none;
     cursor: pointer;
-    background-color:#FFFFFF ;
+    background-color: #FFFFFF;
     color: #27272a;
 }
-.log-in-btn:hover{
+
+.log-in-btn:hover {
     background-color: #27272a;
-    color: #525252;
+    color: #FFFFFF; /* Change text color on hover */
     transition: 0.3s ease-in-out;
 }
 
-.p-login{
+.p-login {
     color: #78716c;
+    margin: 10px 0; /* Margin for spacing */
 }
 
-
-.a-signup{
+.a-signup {
     font-weight: 950;
     cursor: pointer;
-
 }
-.a-signup:hover{
+
+.a-signup:hover {
     color: #262626;
     transition: 0.2s ease;
 }
-a{
+
+a {
     text-decoration: none;
     color: #a8a29e;
 }
 
-.form-login{
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.border-login{
-    border-style: solid;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 30rem;
-    height: 25rem;
-    background-color: #000000;
-    border-radius: 15px;
-    border-style: none;
-}
-
+/* Media Queries for Responsiveness */
 @media (max-width: 575.98px) {
-    .h1-login{
+    .h1-login {
         font-size: 35px;
         margin-top: 40px;
     }
+
+    .border-login {
+        width: 90%; /* Make it more responsive on small screens */
+    }
+
+    .log-in-btn {
+        width: 90%; /* Adjust button width */
+    }
 }
+
 @media (min-width: 576px) and (max-width: 767.98px) {
-    
+    .border-login {
+        width: 70%; /* Adjust width for medium screens */
+    }
 }

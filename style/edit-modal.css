@@ -13,10 +13,10 @@
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 20%;
 }
 
 .close {
@@ -34,13 +34,62 @@
 }
 
 button {
+    margin: 10px 0 0;
     padding: 10px 15px;
-    background-color: #4CAF50; /* Green */
+    background-color: orangered; /* Green */
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+  opacity: 0.8;
+}
+
+
+.form-group {
+    margin-bottom: 15px; /* Space between form elements */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; 
+}
+
+input[type="text"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+
+.submit-btn {
+    background-color: orangered;
+    color: white; 
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer; 
+    border-radius: 5px;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    opacity: 0.8;
+}
+
+
+#editForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+
+}
+
+#editForm div {
+    width: 100%;
+
 }
