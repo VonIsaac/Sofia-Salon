@@ -1,0 +1,82 @@
+
+
+.header-design {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons-postions {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-img {
+    width: 80px;
+}
+
+.container-ul {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 95px;
+}
+
+li {
+    list-style: none;
+}
+
+.a-tags {
+    border-style: none;
+
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #18181b;
+}
+
+
+
+.icons-postions {
+
+    cursor: pointer;
+    
+}
+
+.header-design .icons-postions strong {
+    font-size: 5rem;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    color: #a3a3a3;
+
+}
+
+footer {
+    background-color: #343a40; /* Dark background for the footer */
+    color: white; /* White text color */
+    padding: 40px 20px; /* Padding for spacing */
+    text-align: center; /* Center align text */
+}
+
+.brands {
+    margin-bottom: 20px; /* Space between brand section and copyright */
+}
+
+.brands h3 {
+    font-size: 24px; /* Font size for the heading */
+    margin-bottom: 10px; /* Space below the heading */
+    color: orangered; /* Different color for the heading */
+}
+
+.brands p {
+    font-size: 16px; /* Font size for the paragraph */
+    margin: 0; /* Remove default margin */
+}
+
+footer p {
+    font-size: 14px; /* Font size for the copyright */
+    margin-top: 10px; /* Space above the copyright */
+}

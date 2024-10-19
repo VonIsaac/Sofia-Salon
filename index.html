@@ -2,12 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home_Page</title>
     <link rel="stylesheet" href="./style/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/nav.css">
+    <link rel="stylesheet" href="./style/checkout.css">
+    <script src="https://kit.fontawesome.com/628e0fa5af.js" crossorigin="anonymous"></script>
+ 
+    <script>
+        function toggleNavbar() {
+            const navbarContent = document.getElementById('navbarSupportedContent');
+            navbarContent.style.display = navbarContent.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -18,7 +26,7 @@
            </div>
             <ul class="container-ul">
                 <li>
-                    <a class="a-tags" href="./index.html">Home</a>
+                    <a class="a-tags" href="../index.html">Home</a>
                 </li>
                 <li>
                     <a class="a-tags" href="./features/services.html">Services</a>
@@ -33,75 +41,64 @@
                     <a class="a-tags">Contact</a>
                 </li>
             </ul>
-            <img src="./public/hamburger.png" onclick="togglemenu()" alt="icon" class="menu-icon">
+            
         </div>
     </header>
 
+    <div class="outside-txt"><a href="./features/services.html" >
+        <span style="font-size:25px" class="banner-text">SHOP UP TO 60% OFF</span><span style="font-size: 30px;"></a>
+    </div>
+    <div class="outside-txt last"><a href="./features/services.html" >
+        <span style="font-size:25px" class="banner-text"> GET ₱150 OFF!</span><span style="font-size: 22px;" class="banner-text"> FOR SELECTED ITEMS ONLY!</span></a>
+    </div>
 
-    <main>
-        <div>
-            <div class="container-title">
-                <h1>SOFIA SALON</h1>
+    <section class="container-banner">
+        <div class="wrapper">
+            <div class="wrapper-copy">
+             <img src="./assets/adsban.jpg" class="w-100 banner-img">
             </div>
-
-           <aside>
-            <ul class="ul-aside">
-                <li>
-                    <button class="aside-btns">Book Now</button>
-                </li>
-                <li>
-                    <button class="aside-btns">Page</button>
-                </li>
-                <li>
-                    <a class="aside-btns auth-button"  href="./sign-up.html" >Create Account</a>
-                </li>
-                <li>
-                    <img src="/public/woman-with-long-hair.png" alt="iconss" class="aside-icons">
-                </li>
-            </ul>
-           </aside>
-
-           <ul class="ul-images">
-                <li>
-                    <div>
-                        <img src="public/womenhair-1.jpg" alt="icons" class="ash-gray">
-                    </div>
-                    <h2>Ash Gray Highlits</h2>
-                    <div class="prices-container">
-                        <p>₱450</p>
-                        <button>Color</button>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="public/womenhair-2.jpg" alt="icons-2" class="treatment">
-                    </div>
-                    <h2>Hair Treatment</h2>
-                    <div  class="prices-container">
-                        <p>₱599</p>
-                        <button>Treat</button>
-                    </div>
-                </li>
-                <li>
-                    <div >
-                        <img src="/public/bob-cut4.jpg" alt="icons-3" class="bob-cut">
-                    </div>
-                    <h2>Bob Cut</h2>
-                    <div  class="prices-container">
-                        <p>₱99</p>
-                        <button>Cut</button>
-                    </div>
-                </li>
-           </ul>
         </div>
-    </main>
-    <script>
-        function togglemenu() {
-            const menu = document.querySelector('.container-ul'); // Select the menu
-            menu.classList.toggle('show'); // Toggle the 'show' class
-        }
-    </script>
+    </section>
 
-    <script src="./js/index.js"></script>
+
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="../public/hair-salon5252.logowik.com.webp" alt="Service 1">
+                <h3>Service 1</h3>
+                <p>Brief description of Service 1.</p>
+                <a class="btn-available" href="./features/services.html">Available</a>
+            </div>
+            <div class="service-item">
+                <img src="../public/hair-salon5252.logowik.com.webp" alt="Service 2">
+                <h3>Service 2</h3>
+                <p>Brief description of Service 2.</p>
+                <a class="btn-available" href="./features/services.html">Available</a>
+            </div>
+            <div class="service-item">
+                <img src="../public/hair-salon5252.logowik.com.webp" alt="Service 3">
+                <h3>Service 3</h3>
+                <p>Brief description of Service 3.</p>
+                <a class="btn-available" href="./features/services.html">Available</a>
+            </div>
+            <div class="service-item">
+                <img src="../public/hair-salon5252.logowik.com.webp" alt="Service 4">
+                <h3>Service 4</h3>
+                <p>Brief description of Service 4.</p>
+                <a class="btn-available" href="./features/services.html">Available</a>
+            </div>
+          
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="brands">
+
+            <p>Partnering with the best brands</p>
+        </div>
+        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

@@ -8,6 +8,7 @@ body{
 main{
     display: flex;
     flex-direction: column;
+    padding: 30px;
 }
 
 main h1{
@@ -21,8 +22,6 @@ main h1{
 }
 header{
     margin-top: 48px;
-    border-bottom: solid 5px #d97706;
-    border-radius: 5px;
     margin: 0px;
 }
 
@@ -32,11 +31,11 @@ header{
     align-items: center;
 }
 
-.icons-postions{
+.icons-postions a{
     display: flex;
-
     gap: 15px;
 }
+
 .icon-img{
     width: 80px;
 }
@@ -55,16 +54,12 @@ li{
 
 .a-tags{
     border-style: none;
-    background-color: #d1d5db;
+
     font-size: 20px;
     cursor: pointer;
     font-weight: 600;
     text-transform: uppercase;
     color: #18181b;
-}
-.a-tags:hover{
-    text-decoration: underline;
-    transition: 0.4s ease-in-out;
 }
 
 .menu-icon{
@@ -72,17 +67,6 @@ li{
     display: none;
 }
 
-
-main{
-    margin-top: 25px;
-    margin-top: 30px;
-    margin-right: 30px;
-    margin-left: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-}
 
 #main-container{
     display: grid;
@@ -170,3 +154,52 @@ a:hover{
 
 
 
+.services-grid {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+}
+
+.service-item {
+    background-color: white; /* White background for service items */
+    border: 1px solid #dee2e6; /* Border around items */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside each service item */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    text-align: center; /* Center align text */
+}
+
+.container-img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px; /* Rounded corners for images */
+}
+
+.container-name {
+    font-size: 20px; /* Font size for service titles */
+    margin: 15px 0 10px; /* Space around the title */
+}
+
+.container-description {
+    font-size: 14px; /* Font size for service description */
+    margin-bottom: 15px; /* Space below the description */
+}
+
+.container-prices-bts {
+    margin-top: 15px; /* Space above the price and button section */
+}
+
+.btn-available {
+    background-color: orangered; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    padding: 10px 15px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: inline-block; /* Display as inline-block */
+    text-align: center; /* Center the text */
+}
+
+.btn-available:hover {
+    background-color: #d94a29; /* Darker shade on hover */
+}

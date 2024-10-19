@@ -28,29 +28,26 @@ let generateServices =  async () => {
 
 function displayServices(data) {
     const displayAllServices = data.map(items => {
-        const btn = document.createElement('button');
-        btn.classList.add('btns');
-
-        const containerBorderUl = document.createElement('li');
-        containerBorderUl.classList.add('container-border');
+        const containerBorderUl = document.createElement('div'); // Use div for grid layout
+        containerBorderUl.classList.add('service-item'); // Use the same class for styling
 
         // Create image element and set the data
         const images = document.createElement('img');
-        images.src = '../public/hair-salon5252.logowik.com.webp';
+        images.src = '../public/hair-salon5252.logowik.com.webp'; // Use placeholder image for now
         images.alt = 'icons';
-        images.classList.add('container-img');
+        images.classList.add('container-img'); // Class for styling
         containerBorderUl.appendChild(images);
 
         // Create name element
-        const names = document.createElement('h1');
+        const names = document.createElement('h3'); // Use h3 instead of h1 for better semantics
         names.classList.add('container-name');
-        names.textContent = `${items.service_name}`;
+        names.textContent = items.service_name;
         containerBorderUl.appendChild(names);
 
         // Create description element
         const descriptions = document.createElement('p');
         descriptions.classList.add('container-description');
-        descriptions.textContent = `${items.description}`;
+        descriptions.textContent = items.description;
         containerBorderUl.appendChild(descriptions);
 
         // Create div for price and button
@@ -63,19 +60,30 @@ function displayServices(data) {
         prices.textContent = `₱${items.price}`;
         divs.appendChild(prices); // Append prices to the div
 
-        // Append div to the container
-        containerBorderUl.appendChild(divs);
-
         // Create button with a link to another page
-        const a = document.createElement('a');
+        const btn = document.createElement('button');
+        btn.classList.add('btn-available'); // Use the btn-available class for styling
+        const a = document.createElement('a'); // Create a link inside the button
         a.textContent = 'Avail';
         a.href = `./services-inputs.html?id=${items.service_id}`;  // Passing ID via URL
+        a.style.color = 'white'; // Button text color
+        a.style.textDecoration = 'none'; // Remove underline from link
         btn.appendChild(a);
         divs.appendChild(btn);
+
+        // Append div to the container
+        containerBorderUl.appendChild(divs);
 
         return containerBorderUl;
     });
 
+    // Use a container for the grid layout
+    const serviceContainer = document.createElement('div');
+    serviceContainer.classList.add('services-grid'); // Apply grid class
     displayAllServices.forEach(services => serviceContainer.appendChild(services));
+
+    // Append the service container to the main DOM element
+    document.getElementById('main-content').appendChild(serviceContainer); // Make sure to use your actual main container ID
 }
+
 generateServices();
