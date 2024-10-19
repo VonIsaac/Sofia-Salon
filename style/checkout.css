@@ -99,7 +99,7 @@ h1 {
 
 .service, .ps {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 700    ;
     color: #555;
     margin: 5px 0;
 }
@@ -135,4 +135,55 @@ h1 {
 
 .all-btns:active {
     transform: scale(0.95);
+}
+
+
+#checkout-container {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between items */
+    margin: 20px; /* Margin around the container */
+}
+
+.checkout-item {
+    background-color: white; 
+    border: 1px solid #dee2e6;
+    border-radius: 8px; 
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+}
+
+.names {
+    font-size: 18px; 
+    margin: 10px 0;
+}
+
+.service, .phone {
+    font-size: 14px; 
+    margin: 5px 0; 
+}
+
+.btns {
+    margin-top: 15px; 
+}
+
+.btn-edit, .btn-delete {
+    background-color: orangered; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    padding: 10px 15px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin: 0 5px; /* Space between buttons */
+}
+
+.btn-edit:hover, .btn-delete:hover {
+    background-color: #d94a29; /* Darker shade on hover */
+}
+
+
+.container-img {
+    max-width: 200px;
+
 }

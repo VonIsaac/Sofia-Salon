@@ -33,56 +33,69 @@ a {
 }
 
 .services {
-    padding: 40px 20px; /* Padding for spacing */
-    text-align: center; /* Center align text */
-    background-color: #f8f9fa; /* Light background for the services section */
+    padding: 40px 20px; 
+    text-align: center; 
+    background-color: #f8f9fa; 
 }
 
 .services h2 {
-    font-size: 28px; /* Font size for the section heading */
-    margin-bottom: 30px; /* Space below the heading */
+    font-size: 28px; 
+    margin-bottom: 30px;
 }
 
 .services-grid {
-    display: grid; /* Use grid layout */
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Space between grid items */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
+    gap: 20px;
 }
 
 .service-item {
-    background-color: white; /* White background for service items */
-    border: 1px solid #dee2e6; /* Border around items */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Padding inside each service item */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white; 
+    border: 1px solid #dee2e6; 
+    border-radius: 8px; 
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .service-item img {
-    width: 100%; /* Make images responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 4px; /* Rounded corners for images */
+    width: 100%; 
+    height: auto; 
+    border-radius: 4px;
 }
 
 .service-item h3 {
-    font-size: 20px; /* Font size for service titles */
-    margin: 15px 0 10px; /* Space around the title */
+    font-size: 20px; 
+    margin: 15px 0 10px;
 }
 
 .service-item p {
-    font-size: 14px; /* Font size for service description */
-    margin-bottom: 15px; /* Space below the description */
-    margin: 20px;
+    font-size: 14px;
+    margin-bottom: 15px; 
 }
 
 a.btn-available {
-    background-color: orangered; /* Button background color */
-    color: white; /* Button text color */
-    border: none; /* Remove default border */
-    padding: 10px 15px; /* Padding for the button */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
+    background-color: orangered;
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 5px;
+    cursor: pointer; 
 }
 
 .btn-available:hover {
-    background-color: #d94a29; /* Darker shade on hover */
+    background-color: #d94a29;
+}
+
+
+p {
+    margin: 0;
+
+}
+
+h1,h3,h2,h5,h6 {
+    margin: 0;
+
 }

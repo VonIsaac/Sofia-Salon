@@ -32,56 +32,62 @@ let checkout = async () => {
     }
 }
     
-    function displayCheckout(data) {
-         const displayAllCheckout =  data.map(checkout => {
+function displayCheckout(data) {
+    const checkoutContainer = document.getElementById('checkout-container'); // Make sure you have this element in your HTML
 
-            const containerLi = document.createElement('li');
-            containerLi.classList.add('containers')
-            
-            const h1 = document.createElement('h1');
-            h1.textContent = `Name: ${checkout.customer_name}`
-            h1.classList.add('names');
-            containerLi.appendChild(h1);
+    const displayAllCheckout = data.map(checkout => {
+        const containerLi = document.createElement('div'); // Use div for grid layout
+        containerLi.classList.add('checkout-item'); // Class for styling
 
+ // Create image element and set the data
+ const images = document.createElement('img');
+ images.src = '../public/hair-salon5252.logowik.com.webp'; // Use placeholder image for now
+ images.alt = 'icons';
+ images.classList.add('container-img'); // Class for styling
+ containerLi.appendChild(images);
 
-            const serviceName = document.createElement('p');
-            serviceName.textContent = `Service: ${checkout.service_name}`
-            serviceName.classList.add('service');
-            containerLi.appendChild(serviceName)
-
-
-            const p = document.createElement('p');
-            p.textContent = `Phone Number: ${checkout.phone_number}`
-            p.classList.add('ps');
-            containerLi.appendChild(p);
+        const h1 = document.createElement('h3'); // Use h3 for better semantics
+        h1.textContent = `Name: ${checkout.customer_name}`;
+        h1.classList.add('names');
+        containerLi.appendChild(h1);
 
 
-            const divs = document.createElement('div')
-            divs.classList.add('btns')
+    
+        const serviceName = document.createElement('p');
+        serviceName.textContent = `Service: ${checkout.service_name}`;
+        serviceName.classList.add('service');
+        containerLi.appendChild(serviceName);
 
-            const editBtn = document.createElement('button');
-            editBtn.textContent = 'Edit';
-            editBtn.classList.add('all-btns')
-            divs.appendChild(editBtn)
+        const phone = document.createElement('p');
+        phone.textContent = `Phone Number: ${checkout.phone_number}`;
+        phone.classList.add('phone');
+        containerLi.appendChild(phone);
 
+        // Create div for buttons
+        const btnsDiv = document.createElement('div');
+        btnsDiv.classList.add('btns');
 
-            const deleteBtn = document.createElement('button');
-            deleteBtn.textContent = 'Delete';
-            deleteBtn.classList.add('all-btns');
-            divs.appendChild(deleteBtn);
+        // Edit button
+        const editBtn = document.createElement('button');
+        editBtn.textContent = 'Edit';
+        editBtn.classList.add('btn-edit');
+        btnsDiv.appendChild(editBtn);
 
+        // Delete button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Cancel';
+        deleteBtn.classList.add('btn-delete');
+        btnsDiv.appendChild(deleteBtn);
 
-            containerLi.appendChild(divs)
+        containerLi.appendChild(btnsDiv);
 
-            return containerLi
+        return containerLi;
+    });
 
+    // Append all checkout items to the checkout container
+    displayAllCheckout.forEach(checkout => checkoutContainer.appendChild(checkout));
+}
 
-        })
-
-        displayAllCheckout.forEach(checkout => checkoutContainer.appendChild(checkout));
-    }
-
-   
 
 
 

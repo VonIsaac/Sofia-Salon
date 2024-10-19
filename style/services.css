@@ -5,6 +5,11 @@ body{
     
 }
 
+a {
+    text-decoration: none;
+
+}
+
 main{
     display: flex;
     flex-direction: column;
@@ -137,13 +142,6 @@ li{
     transition: 0.5s ease-in-out;
 }
 
-a {
-    text-decoration: none;
-    color: #171717;
-}
-a:hover{
-    color: #57534e;
-}
 
 
 .container-img{
@@ -190,16 +188,32 @@ a:hover{
 }
 
 .btn-available {
-    background-color: orangered; /* Button background color */
-    color: white; /* Button text color */
-    border: none; /* Remove default border */
-    padding: 10px 15px; /* Padding for the button */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    display: inline-block; /* Display as inline-block */
-    text-align: center; /* Center the text */
+    background-color: orangered; 
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 5px;
+    cursor: pointer; 
+    display: inline-block; 
+    text-align: center; 
 }
 
 .btn-available:hover {
-    background-color: #d94a29; /* Darker shade on hover */
+    background-color: #d94a29; 
+}
+
+.appointment-button {
+    margin: 0 0 10px;
+    background-color: #d94a29; 
+    padding: 10px 15px;
+    color: #FFFFFF;
+    border-radius: 5px;
+
+}
+
+
+.appointment-button:hover {
+
+    opacity: 0.6;
+
 }
