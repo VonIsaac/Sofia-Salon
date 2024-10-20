@@ -4,7 +4,7 @@ let userId = getCookie('user_id');
 
 let checkout = async () => {
 
-    try{
+    try {
 
         const response = await fetch(`http://localhost/fashion-backend/appointment?user_id=${userId}`, {
             method: 'GET',
@@ -14,7 +14,7 @@ let checkout = async () => {
             }
         });
 
-        if(!response.ok){
+        if (!response.ok) {
             throw new Error(`Network response was not ok ${response.status}`);
         };
         console.log(response)
@@ -22,16 +22,16 @@ let checkout = async () => {
         const data = await response.json()
         console.log(data);
 
-        displayCheckout(data) 
-    
-        
+        displayCheckout(data)
 
 
-    }catch(err){
+
+
+    } catch (err) {
         console.error('There was a problem with the fetch operation:', err);
     }
 }
-    
+
 function displayCheckout(data) {
     const checkoutContainer = document.getElementById('checkout-container'); // Ensure this element exists
 
@@ -41,7 +41,7 @@ function displayCheckout(data) {
 
         // Create image element and set the data
         const images = document.createElement('img');
-        images.src = '../public/hair-salon5252.logowik.com.webp'; // Use placeholder image
+        images.src = '../public/hair-salon5252.logowik.com.webp';
         images.alt = 'icons';
         images.classList.add('container-img');
         containerLi.appendChild(images);
@@ -73,6 +73,7 @@ function displayCheckout(data) {
         // Add click event to open the modal
         editBtn.addEventListener('click', () => {
             // Set the values in the modal
+            
             document.getElementById('customerName').value = checkout.customer_name;
             document.getElementById('serviceName').value = checkout.service_name;
             document.getElementById('phoneNumber').value = checkout.phone_number;
@@ -84,13 +85,40 @@ function displayCheckout(data) {
 
         btnsDiv.appendChild(editBtn);
 
-        // Delete button
+        // Create the delete button
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Cancel';
         deleteBtn.classList.add('btn-delete');
-        btnsDiv.appendChild(deleteBtn);
 
+        // Append to your container (as you already have)
+        btnsDiv.appendChild(deleteBtn);
         containerLi.appendChild(btnsDiv);
+
+        // Get delete modal elements
+        const modalDelete = document.querySelector(".modal-delete");
+        const confirmDeleteBtn = document.getElementById("confirmDelete");
+        const closeModalBtn = document.getElementById("closeModal");
+
+        // Show modal when delete button is clicked
+        deleteBtn.addEventListener('click', function () {
+            modalDelete.style.display = "block";
+        });
+
+
+        closeModalBtn.addEventListener('click', function () {
+            modalDelete.style.display = "none";
+        });
+
+
+        confirmDeleteBtn.addEventListener('click', function () {
+            modalDelete.style.display = "none";
+            deleteAppointment(checkout.id);
+
+            window.location.reload();
+
+        });
+
+      
 
         return containerLi;
     });
@@ -98,33 +126,37 @@ function displayCheckout(data) {
     // Append all checkout items to the checkout container
     displayAllCheckout.forEach(checkout => checkoutContainer.appendChild(checkout));
 
-    // Modal functionality
+    // Modal functionality for edit modal
     const modal = document.getElementById('editModal');
+    const deleteModal = document.querySelector('.modal-delete');
     const span = document.getElementsByClassName("close")[0];
 
     // Close the modal when the user clicks on <span> (x)
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = "none";
-    }
+    };
 
     // Close the modal when the user clicks anywhere outside of the modal
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target === modal) {
             modal.style.display = "none";
         }
-    }
+
+        if (event.target === deleteModal) {
+            deleteModal.style.display = "none";
+        }
+    };
 
     // Handle form submission
     const editForm = document.getElementById('editForm');
-    editForm.onsubmit = function(event) {
+    editForm.onsubmit = function (event) {
         event.preventDefault(); // Prevent page refresh
         // Handle the save changes logic here (e.g., send updated data to the server)
-        
+
         // Close the modal after saving
         modal.style.display = "none";
-    }
+    };
 }
-
 
 
 
