@@ -38,13 +38,20 @@ function resetEditForm() {
 
 function displayCheckout(data) {
     const checkoutContainer = document.getElementById('checkout-container'); // Ensure this element exists
+    console.log(data)
+    if (data.message) {
+        const emptyMessage = document.createElement('p');
+        emptyMessage.textContent = data.message; // Use the message from the backend
+        emptyMessage.classList.add('empty-cart-message'); // Optional: add a class for styling
+        checkoutContainer.appendChild(emptyMessage);
+        return;
+    }
 
     const displayAllCheckout = data.map(checkout => {
        
         const containerLi = document.createElement('div');
         containerLi.classList.add('checkout-item');
-        let serviceId;
-        let editParams;
+ 
         // Create image element and set the data
         const images = document.createElement('img');
         images.src = '../public/hair-salon5252.logowik.com.webp';

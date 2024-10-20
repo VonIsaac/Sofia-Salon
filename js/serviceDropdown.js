@@ -12,7 +12,7 @@ let generateServices = async () => {
         }
 
         const data = await response.json();
-        console.log("Fetched data:", data); // Log the data for verification
+
 
         // Pass the data to populateServiceDropdown
         populateServiceDropdown(data);
@@ -29,7 +29,7 @@ function populateServiceDropdown(services) {
 
 
         services.forEach(service => {
-            console.log("Adding option:", service.service_name); // Log each service being added
+          
             const option = document.createElement('option');
             option.value = service.service_id; // Set the value to service ID
             option.textContent = service.service_name; // Display the service name
