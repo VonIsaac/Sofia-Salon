@@ -17,10 +17,10 @@ let checkout = async () => {
         if (!response.ok) {
             throw new Error(`Network response was not ok ${response.status}`);
         };
-        console.log(response)
+
 
         const data = await response.json()
-        console.log(data);
+
 
         displayCheckout(data)
 
@@ -32,13 +32,19 @@ let checkout = async () => {
     }
 }
 
+function resetEditForm() {
+    document.getElementById('editForm').reset();
+}
+
 function displayCheckout(data) {
     const checkoutContainer = document.getElementById('checkout-container'); // Ensure this element exists
 
     const displayAllCheckout = data.map(checkout => {
+       
         const containerLi = document.createElement('div');
         containerLi.classList.add('checkout-item');
-
+        let serviceId;
+        let editParams;
         // Create image element and set the data
         const images = document.createElement('img');
         images.src = '../public/hair-salon5252.logowik.com.webp';
@@ -72,15 +78,24 @@ function displayCheckout(data) {
 
         // Add click event to open the modal
         editBtn.addEventListener('click', () => {
-            // Set the values in the modal
-            
-            document.getElementById('customerName').value = checkout.customer_name;
-            document.getElementById('serviceName').value = checkout.service_name;
-            document.getElementById('phoneNumber').value = checkout.phone_number;
 
-            // Show the modal
+            const datePart = checkout.appointment_date.split(" ")[0];
+            console.log(checkout)
+            document.getElementById('appointment_id').value = checkout.id;
+            document.getElementById('customerName').value = checkout.customer_name;
+            // document.getElementById('serviceName').value = checkout.service_name;
+            document.getElementById('phoneNumber').value = checkout.phone_number;
+            document.getElementById('date').value = datePart;
+            document.getElementById('serviceNameDropdown').value = checkout.service_id;
+            console.log(checkout)
+
+       
+
             const modal = document.getElementById('editModal');
             modal.style.display = "block";
+
+           
+          
         });
 
         btnsDiv.appendChild(editBtn);
@@ -134,12 +149,14 @@ function displayCheckout(data) {
     // Close the modal when the user clicks on <span> (x)
     span.onclick = function () {
         modal.style.display = "none";
+        resetEditForm
     };
 
     // Close the modal when the user clicks anywhere outside of the modal
     window.onclick = function (event) {
         if (event.target === modal) {
             modal.style.display = "none";
+            resetEditForm()
         }
 
         if (event.target === deleteModal) {
@@ -149,13 +166,43 @@ function displayCheckout(data) {
 
     // Handle form submission
     const editForm = document.getElementById('editForm');
-    editForm.onsubmit = function (event) {
-        event.preventDefault(); // Prevent page refresh
-        // Handle the save changes logic here (e.g., send updated data to the server)
+    // Example of calling populateServiceDropdown with the services array
+editForm.onsubmit = async function(event) {
+    event.preventDefault(); // Prevent page refresh
 
-        // Close the modal after saving
-        modal.style.display = "none";
+    // Fetch the services data first, or have it available in the scope
+
+
+    const selectedServiceId = document.getElementById('serviceNameDropdown').value;
+    const customerName = document.getElementById('customerName').value;
+    const date = document.getElementById('date').value;
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    const appointmentId = document.getElementById('appointment_id').value;
+
+    let editParams = {
+        customer_name: customerName,
+        phone_number: phoneNumber,
+        appointment_id: appointmentId,
+        appointment_date: date,
+        service_id: selectedServiceId
     };
+
+    console.log(editParams);
+
+    editAppointment(editParams)
+    .then(() => {
+        // Display a success message to the user
+        alert('Appointment updated successfully!'); // You can replace this with a more user-friendly notification
+        window.location.reload(); // Reload the page to reflect changes
+    })
+    .catch((error) => {
+        console.error('Error updating appointment:', error);
+        alert('There was an error updating the appointment. Please try again.'); // Inform the user about the error
+    });
+
+    // Handle saving or further processing
+};
+
 }
 
 

@@ -9,7 +9,7 @@
     background-color: rgba(0,0,0,0.5); /* Overlay effect */
   }
   
-  .modal-content {
+  .modal-delete .modal-content {
     background-color: #fff;
     padding: 20px;
     margin: 15% auto;
