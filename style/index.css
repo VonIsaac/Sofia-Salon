@@ -100,3 +100,22 @@ h1,h3,h2,h5,h6 {
 
 }
 
+@media only screen and (max-width: 800px) and (max-height: 1280px){
+    .outside-txt{
+        width: 1000px;
+    }
+
+    .services h2 {
+        font-size: 45px;
+    }
+    .services{
+      margin-left: 170px;
+   
+    }
+
+   
+}
+
+@media only screen and (min-width: 360px) and (max-width: 720px) and (orientation: portrait) {
+    /* Your CSS for the Samsung Galaxy S10 in portrait */
+}
