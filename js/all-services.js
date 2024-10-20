@@ -16,8 +16,10 @@ let generateServices =  async () => {
         };
 
         const data = await response.json();
-        console.log(data)
+
         displayServices(data)
+
+        return data;
 
     
     }catch(err){
@@ -83,7 +85,9 @@ function displayServices(data) {
     displayAllServices.forEach(services => serviceContainer.appendChild(services));
 
     // Append the service container to the main DOM element
-    document.getElementById('main-content').appendChild(serviceContainer); // Make sure to use your actual main container ID
+    document.getElementById('main-content').appendChild(serviceContainer); 
 }
+
+// Function to populate the service dropdown
 
 generateServices();
