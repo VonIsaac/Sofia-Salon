@@ -1,0 +1,115 @@
+body {
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #27272a;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-design {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.icons-postions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.icon-img {
+    width: 50px;
+}
+
+h1 {
+    color: white;
+    font-size: 24px;
+}
+
+.container-ul {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.a-tags {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.a-tags:hover {
+    opacity: 0.8;
+}
+
+.container-header{
+    margin-top: 85px;
+    padding-bottom: 55px;
+    border-bottom: 2px solid black;
+}
+
+.dashboard-h1{
+    text-align: center;
+    font-size: 55px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* Add this to your existing CSS */
+
+table {
+    width: 100%;
+    letter-spacing: 1px;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures even spacing across columns */
+}
+
+th, td {
+    border-left: 1px solid #171313;
+    text-align: left;
+    padding: 12px;  /* Adds more spacing for readability */
+    font-size: 18px;  /* Adjust the font size for better visibility */
+}
+
+th {
+    background-color: #27272a;  /* Optional: Dark background for headers */
+    color: white;  /* White text for contrast */
+    font-size: 22px;  /* Increase font size for header cells */
+}
+
+th:nth-child(1) {
+    width: 15%; /* Adjust width based on your preference */
+}
+
+th:nth-child(2) {
+    width: 25%;  /* Wider for services */
+}
+
+th:nth-child(3),
+th:nth-child(4) {
+    width: 20%;  /* Adjust width for appointments and date/staff */
+}
+
+th:nth-child(5) {
+    width: 10%;  /* Actions can have smaller width */
+}
+
+td {
+    white-space: nowrap;  /* Prevents content from wrapping to the next line */
+}
+
+
