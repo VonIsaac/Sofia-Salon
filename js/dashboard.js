@@ -8,8 +8,8 @@ const getDashboardData = async () => {
         const response = await fetch(`http://localhost/fashion-backend/appointments?user_id=${userId}`, {
             method: 'GET',
             headers: {
-              'Content-Type': 'application/json'
-            },
+                'Content-Type': 'application/json',
+            }
         });
 
         if(!response.ok){
@@ -22,7 +22,7 @@ const getDashboardData = async () => {
         displayDashboard(data)
 
     }catch(err){
-        onsole.error('There was a problem with the fetch all data in dashboard:', err);
+        console.error('There was a problem with the fetch all data in dashboard:', err);
     }
 };
 
@@ -30,9 +30,20 @@ function displayDashboard(data) {
    
     const displayAllDashboard = data.map(dashboard => {
         const tr = document.createElement('tr');
-        const td = document.createElement('td');
-        tr.textContent = `${dashboard.customer_name}`
-        tr.appendChild(td)
+        const tdName = document.createElement('td');
+        const tdService = document.createElement('td');
+        const tdApoinments = document.createElement('td');
+        const tdDate = document.createElement('td');
+        tdName.textContent = `${dashboard.customer_name}`
+        tdService.textContent = `${dashboard.service_name}`
+        tdApoinments.textContent = 'HELLo'
+        tdDate.textContent = `${dashboard.appointment_date}`
+        tr.appendChild(tdName);
+        tr.appendChild(tdService);
+        tr.appendChild(tdApoinments);
+        tr.appendChild(tdDate)
+
+
 
         return tr;
     });
