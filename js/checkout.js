@@ -32,6 +32,40 @@ let checkout = async () => {
     }
 }
 
+async function initiatePayment(data){
+    const params = {
+        appointment_id: data.appointment_id,
+        amount: 2500
+    }
+
+    try {
+
+        const response = await fetch(`http://localhost/fashion-backend/payment`, {
+            method: 'POST',
+            body: JSON.stringify(params),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Network response was not ok ${response.status}`);
+        };
+
+
+        const data = await response.json();
+
+        console.log(data.data.attributes)
+
+        window.location.href = data.data.attributes.checkout_url
+
+        return data;
+
+    } catch (err) {
+        console.error('There was a problem with the fetch operation:', err);
+    }
+}
+
 function resetEditForm() {
     document.getElementById('editForm').reset();
 }
@@ -112,8 +146,20 @@ function displayCheckout(data) {
         deleteBtn.textContent = 'Cancel';
         deleteBtn.classList.add('btn-delete');
 
+
+        const payBtn = document.createElement('button');
+        payBtn.textContent = 'Pay';
+        payBtn.classList.add('btn-payment');
+
+        payBtn.addEventListener('click', () => {
+            initiatePayment({appointment_id: checkout.id})
+        })
+
+
         // Append to your container (as you already have)
         btnsDiv.appendChild(deleteBtn);
+        
+        btnsDiv.appendChild(payBtn);
         containerLi.appendChild(btnsDiv);
 
         // Get delete modal elements
