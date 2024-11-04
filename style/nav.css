@@ -53,6 +53,7 @@ li {
 
 }
 
+
 footer {
     background-color: #343a40; /* Dark background for the footer */
     color: white; /* White text color */
@@ -90,6 +91,12 @@ footer p {
 
 @media only screen and (max-width: 800px) and (max-height: 1280px){
     footer{
-        width: 960px;
+        width: 1065px;
+    }
+}
+
+@media only screen and (min-device-width: 412px)  and (max-device-width: 869px){
+    footer p{
+        font-size: 25px;
     }
 }

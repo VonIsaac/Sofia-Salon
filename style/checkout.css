@@ -195,3 +195,36 @@ h1 {
 
     
 }
+
+@media only screen and (min-device-width: 412px)  and (max-device-width: 869px)  {
+
+    /* Styles for landscape orientation */
+
+    header{
+        height: 85px;
+        width: 1070px;
+    }
+    .header-design h1{
+        font-size: 35px;
+    }
+
+    .icon-img{
+        width: 55px;
+    }
+    .a-tags{
+        font-size: 21px;
+    }
+
+    .wrapper-copy{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .banner-img{
+        height: 985px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-left: 600px;
+    }
+}

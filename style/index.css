@@ -11,6 +11,7 @@
     max-width: 1200px;
 }
 
+
 .outside-txt {
     background-color: orange;
     text-align: center;
@@ -89,7 +90,6 @@ a.btn-available {
     background-color: #d94a29;
 }
 
-
 p {
     margin: 0;
 
@@ -102,7 +102,7 @@ h1,h3,h2,h5,h6 {
 
 @media only screen and (max-width: 800px) and (max-height: 1280px){
     .outside-txt{
-        width: 1000px;
+        width: 1100px;
     }
 
     .services h2 {
@@ -116,6 +116,14 @@ h1,h3,h2,h5,h6 {
    
 }
 
-@media only screen and (min-width: 360px) and (max-width: 720px) and (orientation: portrait) {
-    /* Your CSS for the Samsung Galaxy S10 in portrait */
+@media only screen and (min-device-width: 412px)  and (max-device-width: 869px)  {
+    .outside-txt{
+        height: 40px;
+    }
+  
+    
+
+    /* Styles for landscape orientation */
+
+
 }
