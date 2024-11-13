@@ -27,11 +27,39 @@ const getDashboardData = async () => {
     }
 };
 
+
+async function markAsdone(appointment_id, rowElement ){
+    try{
+         // Verify ID is correct
+        const response =  await fetch('http://localhost/fashion-backend/appointment/done', {
+            method: 'PATCH', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                appointment_id: appointment_id, 
+                rowElement: rowElement 
+            })
+        })
+
+
+        const responseText = await response.text(); // Get the raw response text
+        console.log(responseText); // Inspect the server's response
+
+        if (!response.ok) {
+            throw new Error(`Network response was not ok ${response.status}`);
+        };
+    }catch(err){
+        console.error('There was a problem with the fetch all data in dashboard:', err);
+    }
+}
+
 function displayDashboard(data) {
    
     const displayAllDashboard = data.map(dashboard => {
         //creating element
         const tr = document.createElement('tr');
+        tr.id = 'appointment_id'
         const tdName = document.createElement('td');
         const tdService = document.createElement('td');
         const tdApoinments = document.createElement('td');
@@ -42,7 +70,12 @@ function displayDashboard(data) {
 
         //for classlist
         
-        tdButton.classList.add('tdBtns')
+        tdButton.classList.add('tdBtns');
+        tdName.classList.add('table-name');
+        tdService.classList.add('table-service');
+        tdApoinments.classList.add('table-appoinments')
+        tdDate.classList.add('table-date')
+        
 
         // apeend the child
         btn2.textContent = 'Mark as Done'
@@ -58,6 +91,13 @@ function displayDashboard(data) {
         tr.appendChild(tdApoinments);
         tr.appendChild(tdDate)
         tr.appendChild(tdButton)
+
+        btn2.addEventListener('click', () => {
+           let tableRow = tr.style.backgroundColor = '#4ade80'
+            markAsdone(dashboard.id, tableRow); // Pass the row element and id  to markAsDone
+            
+        });
+
 
         return tr;
     });
