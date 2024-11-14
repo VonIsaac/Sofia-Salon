@@ -28,86 +28,90 @@ const getDashboardData = async () => {
 };
 
 
-async function markAsdone(appointment_id, rowElement ){
-    try{
-         // Verify ID is correct
-        const response =  await fetch('http://localhost/fashion-backend/appointment/done', {
-            method: 'PATCH', 
+async function markAsdone(appointment_id, rowElement, btn2) {
+    try {
+        // Verify ID is correct
+        const response = await fetch(`http://localhost/fashion-backend/appointment/done`, {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                appointment_id: appointment_id, 
-                rowElement: rowElement 
-            })
-        })
+            body: JSON.stringify({ appointment_id: appointment_id })
+        });
 
-
-        const responseText = await response.text(); // Get the raw response text
-        console.log(responseText); // Inspect the server's response
+        const responseText = await response.text(); 
+        console.log(responseText); 
 
         if (!response.ok) {
             throw new Error(`Network response was not ok ${response.status}`);
-        };
-    }catch(err){
-        console.error('There was a problem with the fetch all data in dashboard:', err);
+        }
+
+        rowElement.style.backgroundColor = '#4ade80'; // Change row color to green
+        btn2.style.display = 'none'; // Hide the "Mark as Done" button
+
+    } catch (err) {
+        console.error('There was a problem with marking as done:', err);
+        alert('Failed to update appointment status. Please try again.');
     }
 }
 
+
+
+
+
 function displayDashboard(data) {
-   
     const displayAllDashboard = data.map(dashboard => {
-        //creating element
+        // Creating elements for each row
         const tr = document.createElement('tr');
-        tr.id = 'appointment_id'
         const tdName = document.createElement('td');
         const tdService = document.createElement('td');
         const tdApoinments = document.createElement('td');
         const tdDate = document.createElement('td');
         const tdButton = document.createElement('td');
-        const btn1 = document.createElement('button')
-        const btn2 =document.createElement('button')
+        const btn1 = document.createElement('button');
+        const btn2 = document.createElement('button');
 
-        //for classlist
-        
+        // Add classes
         tdButton.classList.add('tdBtns');
         tdName.classList.add('table-name');
         tdService.classList.add('table-service');
-        tdApoinments.classList.add('table-appoinments')
-        tdDate.classList.add('table-date')
-        
+        tdApoinments.classList.add('table-appoinments');
+        tdDate.classList.add('table-date');
 
-        // apeend the child
-        btn2.textContent = 'Mark as Done'
-        btn1.textContent = 'Notify'
-        tdButton.appendChild(btn1)
-        tdButton.appendChild(btn2)
-        tdName.textContent = ` ${dashboard.customer_name}`
-        tdService.textContent = `${dashboard.service_name}`
-        tdApoinments.textContent = `${dashboard.phone_number}`
-        tdDate.textContent = `${dashboard.appointment_date}`
+        // Set button text
+        btn2.textContent = 'Mark as Done';
+        btn1.textContent = 'Notify';
+
+        tdButton.appendChild(btn1);
+        tdButton.appendChild(btn2);
+        tdName.textContent = `${dashboard.customer_name}`;
+        tdService.textContent = `${dashboard.service_name}`;
+        tdApoinments.textContent = `${dashboard.phone_number}`;
+        tdDate.textContent = `${dashboard.appointment_date}`;
         tr.appendChild(tdName);
         tr.appendChild(tdService);
         tr.appendChild(tdApoinments);
-        tr.appendChild(tdDate)
-        tr.appendChild(tdButton)
+        tr.appendChild(tdDate);
+        tr.appendChild(tdButton);
 
+        if (dashboard.is_done) {
+            // If marked as done, set the row background to green and hide the button
+            tr.style.backgroundColor = '#4ade80';
+            btn2.style.display = 'none';
+        }
+
+        // Add event listener for 'Mark as Done' button
         btn2.addEventListener('click', () => {
-           let tableRow = tr.style.backgroundColor = '#4ade80'
-            markAsdone(dashboard.id, tableRow); // Pass the row element and id  to markAsDone
-            
+            console.log('Marking as done');
+            markAsdone(dashboard.id, tr, btn2);
         });
-
 
         return tr;
     });
 
-    //for each the  displayAllDashboard then the table container append it
-    displayAllDashboard.forEach(dashboard => tableContainer.appendChild(dashboard))
+    // Append all rows to the table
+    displayAllDashboard.forEach(dashboard => tableContainer.appendChild(dashboard));
+};
 
-}
-
-
-getDashboardData()
-
+getDashboardData();
 
