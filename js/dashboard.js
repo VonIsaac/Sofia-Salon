@@ -56,7 +56,34 @@ async function markAsdone(appointment_id, rowElement, btn2) {
 }
 
 
+async function getNotify(customerName, phoneNumber){
+    const message = `Hello ${customerName}, this is a reminder for your appointment.`;
+    try{
+        const response = await fetch('http://localhost/fashion-backend/sms', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                message: message,
+                phone_numbers: [phoneNumber] // stored in array for Scalability like in the server side
+            })
+        });
 
+        if(!response.ok){
+            throw new Error(`Network response was not ok ${response.status}`);
+        }
+
+        const data = await response.json()
+        console.log('Notification sent successfully:', data);
+
+        alert(`Notification sent to ${customerName}`);
+
+    }catch(err){
+        console.log(err)
+        alert('Failed to send notification. Please try again.');
+    }
+}
 
 
 function displayDashboard(data) {
@@ -105,6 +132,12 @@ function displayDashboard(data) {
             console.log('Marking as done');
             markAsdone(dashboard.id, tr, btn2);
         });
+
+        btn1.addEventListener('click', () => {
+            console.log('sending Notif')
+            getNotify(dashboard.customer_name, dashboard.phone_number)
+        })
+
 
         return tr;
     });
