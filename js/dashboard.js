@@ -56,8 +56,11 @@ async function markAsdone(appointment_id, rowElement, btn2) {
 }
 
 
-async function getNotify(customerName, phoneNumber){
-    const message = `Hello ${customerName}, this is a reminder for your appointment.`;
+async function getNotify(customerName, phoneNumber, apoinmentDate){
+    //covert into readable format
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const stringDate = new Date(apoinmentDate).toLocaleDateString('en-PH', options)
+    const message = `Hello ${customerName}, this is a reminder for your upcomming appointment this ${stringDate}, Thank you`;
     try{
         const response = await fetch('http://localhost/fashion-backend/sms', {
             method: 'POST',
@@ -67,6 +70,7 @@ async function getNotify(customerName, phoneNumber){
             body: JSON.stringify({
                 message: message,
                 phone_numbers: [phoneNumber] // stored in array for Scalability like in the server side
+
             })
         });
 
@@ -84,6 +88,7 @@ async function getNotify(customerName, phoneNumber){
         alert('Failed to send notification. Please try again.');
     }
 }
+
 
 
 function displayDashboard(data) {
@@ -135,7 +140,7 @@ function displayDashboard(data) {
 
         btn1.addEventListener('click', () => {
             console.log('sending Notif')
-            getNotify(dashboard.customer_name, dashboard.phone_number)
+            getNotify(dashboard.customer_name, dashboard.phone_number, dashboard.appointment_date)
         })
 
 
