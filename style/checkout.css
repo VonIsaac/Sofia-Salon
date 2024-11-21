@@ -168,7 +168,7 @@ h1 {
     margin-top: 15px; 
 }
 
-.btn-edit, .btn-delete {
+.btn-edit, .btn-delete, .btn-payment {
     background-color: orangered; /* Button background color */
     color: white; /* Button text color */
     border: none; /* Remove default border */
@@ -178,7 +178,7 @@ h1 {
     margin: 0 5px; /* Space between buttons */
 }
 
-.btn-edit:hover, .btn-delete:hover {
+.btn-edit:hover, .btn-delete:hover, .btn-payment:hover {
     background-color: #d94a29; /* Darker shade on hover */
 }
 
