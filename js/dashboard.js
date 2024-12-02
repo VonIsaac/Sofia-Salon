@@ -94,7 +94,8 @@ function displayDashboard(data) {
 
         btn2.addEventListener('click', () => {
            let tableRow = tr.style.backgroundColor = '#4ade80'
-            markAsdone(dashboard.id, tableRow); // Pass the row element and id  to markAsDone
+           console.log("click")
+            markAsdone(dashboard.id, tableRow) // Pass the row element and id  to markAsDone
             
         });
 
