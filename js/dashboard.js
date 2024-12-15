@@ -61,6 +61,7 @@ async function getNotify(customerName, phoneNumber, apoinmentDate){
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const stringDate = new Date(apoinmentDate).toLocaleDateString('en-PH', options)
     const message = `Hello ${customerName}, this is a reminder for your upcomming appointment this ${stringDate}, Thank you`;
+    
     try{
         const response = await fetch('http://localhost/fashion-backend/sms', {
             method: 'POST',

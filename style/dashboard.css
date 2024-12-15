@@ -137,14 +137,14 @@ td {
 
 /* Base Styles */
 body {
-    background-color: #f5f5f5;
+    background-color: #E6E6FA;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
 
 header {
-    background-color: #27272a;
+    background-color: #FFC0CB;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -222,7 +222,7 @@ th, td {
 }
 
 th {
-    background-color: #27272a;
+    background-color: #FFC0CB;
     color: white;
     font-size: 20px;
 }

@@ -1,9 +1,10 @@
+
 .container-banner {
 
     width: 100%;
     margin: 0 auto;
     display: flex;
-
+    background-color: #E6E6FA;
     justify-content: center;
 }
 
@@ -13,7 +14,7 @@
 
 
 .outside-txt {
-    background-color: orange;
+    background-color: #B76E79;
     text-align: center;
 
 }
@@ -33,10 +34,14 @@ a {
 
 }
 
+.service-img{
+    width: 150px;
+}
+
 .services {
     padding: 40px 20px; 
     text-align: center; 
-    background-color: #f8f9fa; 
+   background-color: #E6E6FA; 
 }
 
 .services h2 {
@@ -78,8 +83,8 @@ a {
 }
 
 a.btn-available {
-    background-color: orangered;
-    color: white; 
+    background-color: #B76E79;
+    color: #fafafa; 
     border: none; 
     padding: 10px 15px; 
     border-radius: 5px;
@@ -87,7 +92,7 @@ a.btn-available {
 }
 
 .btn-available:hover {
-    background-color: #d94a29;
+    background-color: #B76E79;
 }
 
 p {
