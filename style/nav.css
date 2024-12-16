@@ -55,7 +55,7 @@ li {
 
 
 footer {
-    background-color: #343a40; /* Dark background for the footer */
+    background-color: #FFC0CB; /* Dark background for the footer */
     color: white; /* White text color */
     padding: 40px 20px; /* Padding for spacing */
     text-align: center; /* Center align text */
@@ -88,6 +88,7 @@ footer p {
     padding: 10px;
 
 }
+
 
 @media only screen and (max-width: 800px) and (max-height: 1280px){
     footer{

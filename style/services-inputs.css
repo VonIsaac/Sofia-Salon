@@ -41,6 +41,11 @@ form{
     
 }
 
+a{
+    text-decoration: none;
+    color: #a8a29e;
+}
+
 .input-name{
     width: 500px;
     background-color: #d1d5db;
