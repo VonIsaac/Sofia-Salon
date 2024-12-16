@@ -35,7 +35,7 @@ function displayServices(data) {
 
         // Create image element and set the data
         const images = document.createElement('img');
-        images.src = '../public/hair-salon5252.logowik.com.webp'; // Use placeholder image for now
+        images.src = items.img_url; // Use placeholder image for now
         images.alt = 'icons';
         images.classList.add('container-img'); // Class for styling
         containerBorderUl.appendChild(images);

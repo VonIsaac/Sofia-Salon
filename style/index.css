@@ -134,3 +134,17 @@ h1,h3,h2,h5,h6 {
 
 
 }
+
+.carousel-item img {
+    height: 400px;  /* Adjust image height */
+    object-fit: cover;  /* Ensure the images fill the area without distortion */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);  /* Dark background for text readability */
+    padding: 20px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black;  /* Customize the navigation icons */
+}

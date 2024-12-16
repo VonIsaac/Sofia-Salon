@@ -135,6 +135,9 @@ function displayDashboard(data) {
 
         // Add event listener for 'Mark as Done' button
         btn2.addEventListener('click', () => {
+           let tableRow = tr.style.backgroundColor = '#4ade80'
+  
+            
             console.log('Marking as done');
             markAsdone(dashboard.id, tr, btn2);
         });

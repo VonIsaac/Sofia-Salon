@@ -35,7 +35,7 @@ let checkout = async () => {
 async function initiatePayment(data){
     const params = {
         appointment_id: data.appointment_id,
-        amount: 2500
+        amount: data.amount
     }
 
     try {
@@ -82,7 +82,7 @@ function displayCheckout(data) {
     }
 
     const displayAllCheckout = data.map(checkout => {
-       
+        console.log(checkout)
         const containerLi = document.createElement('div');
         containerLi.classList.add('checkout-item');
  
@@ -152,7 +152,7 @@ function displayCheckout(data) {
         payBtn.classList.add('btn-payment');
 
         payBtn.addEventListener('click', () => {
-            initiatePayment({appointment_id: checkout.id})
+            initiatePayment({appointment_id: checkout.id, amount: parseInt(checkout.price * 100)})
         })
 
 

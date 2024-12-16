@@ -95,9 +95,12 @@ li{
     align-items: center;
     gap: 55px;
 }
-.container-img{
-    border-radius: 5px;
-}
+
+.container-img {
+    height: 200px;  /* Set your desired height */
+    width: auto;    /* Automatically adjust the width to maintain the aspect ratio */
+    object-fit: cover; /* Ensures the image covers the container, maintaining aspect ratio */
+  }
 
 .container-name{
     font-size: 25px;
@@ -165,12 +168,6 @@ li{
     padding: 20px; /* Padding inside each service item */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
     text-align: center; /* Center align text */
-}
-
-.container-img {
-    width: 100%; /* Make images responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 4px; /* Rounded corners for images */
 }
 
 .container-name {
