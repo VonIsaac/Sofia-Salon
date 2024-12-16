@@ -30,7 +30,7 @@ body {
     padding: 15px; /* General padding */
     width: 100%; /* Full width for responsiveness */
     max-width: 30rem; /* Set a maximum width */
-    background-color: #000000;
+    background-color: #F08080;
     border-radius: 15px;
 }
 
@@ -65,7 +65,7 @@ body {
     font-weight: 700;
     margin-bottom: 15px; /* Space between inputs */
     color: #1c1917;
-    background-color: #737373; 
+    background-color: #F4C2C2; 
     box-sizing: border-box; /* Include padding in width */
 }
 
@@ -89,13 +89,13 @@ body {
 }
 
 .signup-btn:hover {
-    background-color: #27272a;
-    color: #FFFFFF; /* Change text color on hover */
+    background-color: #FFFDD0;
+    color: #27272a; /* Change text color on hover */
     transition: 0.3s ease-in-out;
 }
 
 .p-signup {
-    color: #78716c;
+    color: #e4e4e7;
     margin: 10px 0; /* Margin for spacing */
 }
 

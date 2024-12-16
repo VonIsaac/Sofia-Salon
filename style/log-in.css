@@ -18,7 +18,7 @@ body {
 
 .title-log-in {
     text-align: center;
-    color: #e7e5e4;
+    color: #e4e4e7;
     text-transform: uppercase;
     font-weight: 750;
     font-size: 37px;
@@ -30,7 +30,7 @@ body {
     padding: 15px; /* General padding for the border */
     width: 100%; /* Full width for responsiveness */
     max-width: 30rem; /* Set max width */
-    background-color: #000000;
+    background-color: #F08080;
     border-radius: 15px;
 }
 
@@ -63,7 +63,7 @@ body {
     font-weight: 700;
     margin-bottom: 15px; /* Space between inputs */
     color: #1c1917;
-    background-color: #737373;
+    background-color: #F4C2C2;
     box-sizing: border-box; /* Include padding in width */
 }
 
@@ -86,19 +86,20 @@ body {
 }
 
 .log-in-btn:hover {
-    background-color: #27272a;
-    color: #FFFFFF; /* Change text color on hover */
+    background-color: #FFFDD0;
+    color: #27272a; /* Change text color on hover */
     transition: 0.3s ease-in-out;
 }
 
 .p-login {
-    color: #78716c;
+    color: #e4e4e7;
     margin: 10px 0; /* Margin for spacing */
 }
 
 .a-signup {
     font-weight: 950;
     cursor: pointer;
+    color: #FFFFFF;
 }
 
 .a-signup:hover {
