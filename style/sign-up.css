@@ -73,7 +73,7 @@ body {
 .input-emails:focus,
 .input-password:focus {
     outline: none;
-    background-color: #616161; /* Slightly darker on focus */
+    background-color: #F4C2C2; /* Slightly darker on focus */
 }
 
 .signup-btn {
