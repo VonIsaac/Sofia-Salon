@@ -216,7 +216,7 @@ h1 {
         font-size: 21px;
     }
 
-    .wrapper-copy{
+    .-copy{
         display: flex;
         justify-content: center;
         align-items: center;
