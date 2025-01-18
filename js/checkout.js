@@ -1,6 +1,6 @@
 const checkoutContainer = document.getElementById('checkout-container');
 
-let userId = getCookie('user_id');
+//let userId = getCookie('user_id');
 
 let checkout = async () => {
 
@@ -238,7 +238,8 @@ editForm.onsubmit = async function(event) {
         appointment_id: appointmentId,
         appointment_date: date,
         service_id: selectedServiceId
-    };
+    };  
+
 
     console.log(editParams);
 
@@ -246,7 +247,7 @@ editForm.onsubmit = async function(event) {
     .then(() => {
         // Display a success message to the user
         alert('Appointment updated successfully!'); // You can replace this with a more user-friendly notification
-        window.location.reload(); // Reload the page to reflect changes
+       // window.location.reload(); // Reload the page to reflect changes
     })
     .catch((error) => {
         console.error('Error updating appointment:', error);
