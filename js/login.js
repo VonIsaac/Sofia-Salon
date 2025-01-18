@@ -23,14 +23,24 @@ document.querySelector('.form-login').addEventListener('submit', async function(
             alert("Invalid credentials or something went wrong.");
             throw new Error(`HTTP error! status: ${response.status}`);
         }
+        
         const result = await response.json();
-         // Store user_id in cookies upon successful login
-         document.cookie = `user_id=${result.user_id}; path=/;`;
-        console.log(result)
-        alert('Login successful');
-        window.location.href = './index.html    ';  
+        // Store user_id in cookies upon successful login
+        document.cookie = `user_id=${result.user_id}; path=/;`;
+        document.cookie = `users=${result}; path=/;`;
 
-      
+        // Check if user is admin and redirect accordingly
+        const userResponse = await fetch(`http://localhost/fashion-backend/user?user_id=${result.user_id}`);
+        const userData = await userResponse.json();
+
+        if (userData.is_admin) {
+            alert('Admin login successful');
+            window.location.href = './dashboard/index.html';  // Redirect to admin dashboard
+        } else {
+            alert('User login successful');
+            window.location.href = './index.html';  // Redirect to regular user home page
+        }
+
     } catch (error) {
         console.error('An error occurred:', error.message);
     } 

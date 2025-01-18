@@ -27,7 +27,7 @@ document.querySelector('.form-appointment').addEventListener('submit', async (e)
                 phone_number: number,
                 appointment_date: date,
                 user_id: userId,
-                service_id: serviceId
+                id: serviceId
             })
         });
 
@@ -41,7 +41,7 @@ document.querySelector('.form-appointment').addEventListener('submit', async (e)
         if (response.ok) {
             alert('Succesfully Set Apointment')
         }
-        window.location.href = '../features/services.html'
+        // window.location.href = '../features/services.html'
         //clear the inputs fields when done taking apointmenst
 
 

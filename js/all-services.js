@@ -64,10 +64,11 @@ function displayServices(data) {
 
         // Create button with a link to another page
         const btn = document.createElement('button');
+
         btn.classList.add('btn-available'); // Use the btn-available class for styling
         const a = document.createElement('a'); // Create a link inside the button
         a.textContent = 'Avail';
-        a.href = `./services-inputs.html?id=${items.service_id}`;  // Passing ID via URL
+        a.href = `./services-inputs.html?id=${items.id}`;  // Passing ID via URL
         a.style.color = 'white'; // Button text color
         a.style.textDecoration = 'none'; // Remove underline from link
         btn.appendChild(a);

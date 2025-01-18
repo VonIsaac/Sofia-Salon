@@ -18,7 +18,8 @@ document.querySelector('.form-signup').addEventListener('submit', async function
             body: JSON.stringify({
                 username: name,
                 email: email,
-                password: password
+                password: password,
+                is_admin: false
             })
         });
 
