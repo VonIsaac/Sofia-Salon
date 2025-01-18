@@ -150,7 +150,7 @@ function displayCheckout(data) {
         payBtn.classList.add('btn-payment');
 
         payBtn.addEventListener('click', () => {
-            initiatePayment({appointment_id: checkout.id, amount: parseInt(checkout.price * 100)})
+            initiatePayment({appointment_id: checkout.appointment_id, amount: parseInt(checkout.price * 100)})
         })
 
 
@@ -178,7 +178,7 @@ function displayCheckout(data) {
 
         confirmDeleteBtn.addEventListener('click', function () {
             modalDelete.style.display = "none";
-            deleteAppointment(checkout.id);
+            deleteAppointment(checkout.appointment_id);
 
             window.location.reload();
 
