@@ -122,7 +122,7 @@ function displayCheckout(data) {
 
             const datePart = checkout.appointment_date.split(" ")[0];
             console.log(checkout)
-            document.getElementById('appointment_id').value = checkout.id;
+            document.getElementById('appointment_id').value = checkout.appointment_id;
             document.getElementById('customerName').value = checkout.customer_name;
             // document.getElementById('serviceName').value = checkout.service_name;
             document.getElementById('phoneNumber').value = checkout.phone_number;
@@ -152,7 +152,7 @@ function displayCheckout(data) {
         payBtn.classList.add('btn-payment');
 
         payBtn.addEventListener('click', () => {
-            initiatePayment({appointment_id: checkout.id, amount: parseInt(checkout.price * 100)})
+            initiatePayment({appointment_id: checkout.appointment_id, amount: parseInt(checkout.price * 100)})
         })
 
 
@@ -180,7 +180,7 @@ function displayCheckout(data) {
 
         confirmDeleteBtn.addEventListener('click', function () {
             modalDelete.style.display = "none";
-            deleteAppointment(checkout.id);
+            deleteAppointment(checkout.appointment_id);
 
             window.location.reload();
 
@@ -243,7 +243,7 @@ editForm.onsubmit = async function(event) {
 
     console.log(editParams);
 
-    editAppointment(editParams)
+    await editAppointment(editParams)
     .then(() => {
         // Display a success message to the user
         alert('Appointment updated successfully!'); // You can replace this with a more user-friendly notification
@@ -263,4 +263,3 @@ editForm.onsubmit = async function(event) {
 
 
 checkout()
-

@@ -31,7 +31,7 @@ function populateServiceDropdown(services) {
         services.forEach(service => {
           
             const option = document.createElement('option');
-            option.value = service.service_id; // Set the value to service ID
+            option.value = service.id; // Set the value to service ID
             option.textContent = service.service_name; // Display the service name
             serviceDropdown.appendChild(option);
         });
