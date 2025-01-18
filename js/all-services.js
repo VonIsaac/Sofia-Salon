@@ -1,31 +1,45 @@
 const serviceContainer = document.getElementById('main-container');
 
-let generateServices =  async () => {
+function getCategoryFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('category'); 
 
-    try{
-        const response = await fetch('http://localhost/fashion-backend/services', {
-            method: 'GET', // Explicitly specifying GET method
+
+    
+}
+
+let generateServices = async () => {
+    const category = getCategoryFromUrl(); 
+    let url = 'http://localhost/fashion-backend/services'; 
+
+
+    // Modify the URL if category is provided
+    if (category) {
+        url += `?category=${encodeURIComponent(category)}`;
+    }else {
+        const seeAllLink = document.getElementById('see-all-link');
+        seeAllLink.style.display = 'none';
+    }
+
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
             headers: {
-              'Content-Type': 'application/json' // Optional headers, like specifying JSON response
+                'Content-Type': 'application/json' 
             }
         });
 
-      
-        if(!response.ok){
+        if (!response.ok) {
             throw new Error(`Network response was not ok ${response.status}`);
-        };
+        }
 
         const data = await response.json();
-
-        displayServices(data)
+        displayServices(data);
 
         return data;
-
-    
-    }catch(err){
+    } catch (err) {
         console.error('There was a problem with the fetch operation:', err);
     }
-
 }
 
 function displayServices(data) {
