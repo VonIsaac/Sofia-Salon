@@ -1,7 +1,5 @@
 const checkoutContainer = document.getElementById('checkout-container');
 
-let userId = getCookie('user_id');
-
 let checkout = async () => {
 
     try {
@@ -122,7 +120,7 @@ function displayCheckout(data) {
 
             const datePart = checkout.appointment_date.split(" ")[0];
             console.log(checkout)
-            document.getElementById('appointment_id').value = checkout.id;
+            document.getElementById('appointment_id').value = checkout.appointment_id;
             document.getElementById('customerName').value = checkout.customer_name;
             // document.getElementById('serviceName').value = checkout.service_name;
             document.getElementById('phoneNumber').value = checkout.phone_number;
@@ -242,11 +240,11 @@ editForm.onsubmit = async function(event) {
 
     console.log(editParams);
 
-    editAppointment(editParams)
+    await editAppointment(editParams)
     .then(() => {
         // Display a success message to the user
         alert('Appointment updated successfully!'); // You can replace this with a more user-friendly notification
-        window.location.reload(); // Reload the page to reflect changes
+        // window.location.reload(); // Reload the page to reflect changes
     })
     .catch((error) => {
         console.error('Error updating appointment:', error);
@@ -262,4 +260,3 @@ editForm.onsubmit = async function(event) {
 
 
 checkout()
-
