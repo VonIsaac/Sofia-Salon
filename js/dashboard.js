@@ -1,12 +1,14 @@
 const tableContainer = document.getElementById('table-container');
 
-let userId = getCookie('user_id');
+
+
+
 
 const getDashboardData = async () => {
-
+    console.log("HERE WE ARE")
     try{
         //get the data from server
-        const response = await fetch(`http://localhost/fashion-backend/appointments?user_id=${userId}`, {
+        const response = await fetch(`http://localhost/fashion-backend/appointments`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
