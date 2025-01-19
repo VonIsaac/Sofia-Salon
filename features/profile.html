@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="../style/nav.css">
+    <link rel="stylesheet" href="../style/checkout.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        label {
+            align-self: flex-start;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #003f7f;
+        }
+
+        @media(max-width: 667px){
+            .header-design {
+                flex-direction: column !important;
+                justify-content: center;
+                gap: 20px;
+
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to get a cookie by name
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+
+            // Parse the "users" cookie
+            const userCookie = getCookie('users');
+            let userData;
+
+            if (userCookie) {
+                try {
+                    userData = JSON.parse(userCookie);
+                } catch (error) {
+                    console.error('Failed to parse user cookie:', error);
+                }
+            }
+
+            // Populate form fields with user data
+            if (userData && userData.user) {
+                document.getElementById('user_id').value = userData.user.id;
+                document.getElementById('username').value = userData.user.username;
+                document.getElementById('email').value = userData.user.email;
+            }
+
+            // Handle form submission
+            document.getElementById('editForm').addEventListener('submit', async (event) => {
+                const newPassword = document.getElementById("new_password").value;
+                const confirmPassword = document.getElementById("confirm_password").value;
+
+             // Check if the passwords match
+            if (newPassword !== confirmPassword) {
+                event.preventDefault(); // Prevent form submission
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+                event.preventDefault();
+
+                const formData = new FormData(event.target);
+                const data = Object.fromEntries(formData.entries());
+
+                try {
+                    const response = await fetch('http://localhost/fashion-backend/user/edit', {
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        alert(result.message);
+                        window.location.reload();
+                    } else {
+                        alert(`Error: ${result.message}`);
+                    }
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    alert('An error occurred while updating the user.');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header style="margin-bottom: 20px;width: 100%;">
+        <div class="header-design">
+            <div class="icons-postions">
+                <img src="/public/phone-call.png" alt="icon" class="icon-img" style="margin-left: 20px;">
+                <h1>@sofiasalon</h1>
+            </div>
+            <ul class="container-ul">
+                <li>
+                    <a class="a-tags" href="../index.html">Home</a>
+                </li>
+               
+                <li>
+                    <a class="a-tags" href="../features/services.html">Services</a>
+                </li>
+                <li>
+                    <a class="a-tags auth-button" href="./log-in.html">Login</a>
+                </li>
+                <li></li>
+
+            </ul>
+
+        </div>
+    </header>
+    <form id="editForm">
+        <h1>Edit User</h1>
+    
+        <input type="text" id="user_id" name="user_id" style="display: none;">
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="current_password">Current Password:</label>
+        <input type="password" id="current_password" name="current_password"><br><br>
+
+        <label for="new_password">New Password:</label>
+        <input type="password" id="new_password" name="new_password" minlength="8"><br><br>
+
+        <label for="confirm_password">Confirm New Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" minlength="8"><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+</body>
+<script src="../js/index.js"></script>
+</html>

@@ -27,7 +27,7 @@ document.querySelector('.form-login').addEventListener('submit', async function(
         const result = await response.json();
         // Store user_id in cookies upon successful login
         document.cookie = `user_id=${result.user_id}; path=/;`;
-        document.cookie = `users=${result}; path=/;`;
+        document.cookie = `users=${JSON.stringify(result)}; path=/;`;
 
         // Check if user is admin and redirect accordingly
         const userResponse = await fetch(`http://localhost/fashion-backend/user?user_id=${result.user_id}`);

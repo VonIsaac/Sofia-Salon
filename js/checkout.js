@@ -72,7 +72,6 @@ function resetEditForm() {
 
 function displayCheckout(data) {
     const checkoutContainer = document.getElementById('checkout-container'); // Ensure this element exists
-    console.log(data)
     if (data.message) {
         const emptyMessage = document.createElement('p');
         emptyMessage.textContent = data.message; // Use the message from the backend
@@ -147,21 +146,35 @@ function displayCheckout(data) {
         deleteBtn.classList.add('btn-delete');
 
 
-        const payBtn = document.createElement('button');
-        payBtn.textContent = 'Pay';
-        payBtn.classList.add('btn-payment');
+         btnsDiv.appendChild(deleteBtn);
+        containerLi.appendChild(btnsDiv);
 
-        payBtn.addEventListener('click', () => {
-            initiatePayment({appointment_id: checkout.appointment_id, amount: parseInt(checkout.price * 100)})
-        })
+
+        if (checkout.is_paid) {
+            // Create a banner for paid checkout
+            const paidBanner = document.createElement('div');
+            paidBanner.classList.add('paid-banner');
+            paidBanner.textContent = 'Payment Confirmed';
+            containerLi.appendChild(paidBanner);
+
+
+
+        } else {
+            // If not paid, show the payment button
+            const payBtn = document.createElement('button');
+            payBtn.textContent = 'Pay';
+            payBtn.classList.add('btn-payment');
+
+            payBtn.addEventListener('click', () => {
+                initiatePayment({appointment_id: checkout.appointment_id, amount: parseInt(checkout.price * 100)});
+            });
+
+            btnsDiv.appendChild(payBtn);
+        }
 
 
         // Append to your container (as you already have)
-        btnsDiv.appendChild(deleteBtn);
-        
-        btnsDiv.appendChild(payBtn);
-        containerLi.appendChild(btnsDiv);
-
+     
         // Get delete modal elements
         const modalDelete = document.querySelector(".modal-delete");
         const confirmDeleteBtn = document.getElementById("confirmDelete");

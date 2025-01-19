@@ -37,5 +37,48 @@
     <h1>Payment Successful!</h1>
     <p>Thank you for your payment. Your transaction has been completed successfully.</p>
     <a href="/" class="button">Return to Homepage</a>
+
+    <script>
+        // Function to make the API request to mark payment as done
+        function markAsPaid(appointmentId) {
+            // Endpoint URL
+            const url = 'http://localhost/fashion-backend/paid';
+            
+            // Create the request body
+            const requestBody = {
+                appointment_id: appointmentId
+            };
+
+            // Fetch API to send the PATCH request
+            fetch(url, {
+                method: 'PATCH', 
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestBody) // Sending appointment_id as JSON
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    console.log("Payment marked as paid successfully");
+                    // You can handle any UI updates or redirection here if needed
+                } else {
+                    console.log("Error marking payment as paid: ", data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        // Get the appointment_id from the URL (e.g., passed as a query parameter)
+        const urlParams = new URLSearchParams(window.location.search);
+        const appointmentId = urlParams.get('appointment_id');
+        
+        // If we have an appointment_id, call the markAsPaid function
+        if (appointmentId) {
+            markAsPaid(appointmentId);
+        }
+    </script>
 </body>
 </html>
