@@ -32,6 +32,15 @@
     }
 }*/
 
+// for apoinment name accepted only letters
+
+function validateInput(input){
+    const regex = /^[A-Za-z\s]*$/;
+    if(!regex.test(input.value)){
+        input.value = input.value.replace(/[^A-Za-z]/g, ""); // Remove invalid characters
+    }
+} 
+
 document.querySelector('.form-appointment').addEventListener('submit', async (e) => {
 
 
@@ -47,7 +56,7 @@ document.querySelector('.form-appointment').addEventListener('submit', async (e)
     const urlParams = new URLSearchParams(window.location.search);
 
     const serviceId = urlParams.get('id');
-    const userId = getUserId();
+    //const userId = getUserId();
 
     try {
         const response = await fetch('http://localhost/fashion-backend/checkout', {

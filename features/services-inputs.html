@@ -14,9 +14,9 @@
         <div class="container-border">
             <h1>SOFIA SALON</h1>
             <form action="#"  class="form-appointment">
-                <input type="text" name="text" id="customer_name" class="input-name" placeholder="Name" onkeydown="return /[a-z]/i.test(event.key)">
-                <input type="number" name="number" id="phone_number" class="input-number" placeholder="Phone Number"  pattern="[1-9]{1}[0-9]{9}">
-                <input type="date" name="date" id="appointment_date" class="input-date" placeholder="Appointment Date">
+                <input type="text" name="text" id="customer_name" class="input-name" placeholder="Name" required  oninput="validateInput(this)">
+                <input type="number" name="number" id="phone_number" class="input-number" placeholder="Phone Number" required  minlength="8">
+                <input type="date" name="date" id="appointment_date" class="input-date" placeholder="Appointment Date" required>
                 <div class="btns">
                     <button><a href="./services.html">Cancel</a></button>
                     <button>Submit</button>
