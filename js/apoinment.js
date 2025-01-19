@@ -1,8 +1,9 @@
-/*async function getaAppointment(customerName, phoneNumber, apoinmentDate){
+
+async function getaAppointment(customer_name,  phone_number,  appointment_date){
     //covert into readable format
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const stringDate = new Date(apoinmentDate).toLocaleDateString('en-PH', options)
-    const message = `Hello ${customerName}, this is a reminder for your upcomming appointment this ${stringDate}, Thank you`;
+    const stringDate = new Date(appointment_date).toLocaleDateString('en-PH', options)
+    const message = `Gooday ${customer_name}, the service that you avail are set in ${stringDate}, Thank you`;
     
     try{
         const response = await fetch('http://localhost/fashion-backend/sms', {
@@ -12,7 +13,7 @@
             },
             body: JSON.stringify({
                 message: message,
-                phone_numbers: [phoneNumber] // stored in array for Scalability like in the server side
+                phone_numbers: [phone_number] // stored in array for Scalability like in the server side
 
             })
         });
@@ -24,16 +25,16 @@
         const data = await response.json()
         console.log('Notification sent successfully:', data);
 
-        alert(`Notification sent to ${customerName}`);
+        alert(`Notification sent to ${customer_name}`);
 
     }catch(err){
         console.log(err)
         alert('Failed to send notification. Please try again.');
     }
-}*/
+}
+
 
 // for apoinment name accepted only letters
-
 function validateInput(input){
     const regex = /^[A-Za-z\s]*$/;
     if(!regex.test(input.value)){
@@ -84,9 +85,10 @@ document.querySelector('.form-appointment').addEventListener('submit', async (e)
 
         if (response.ok) {
             alert('Succesfully Set Apointment')
-
+            getaAppointment( name, number, date)
+            window.location.href = '../features/services.html'
         }
-        // window.location.href = '../features/services.html'
+        // 
         //clear the inputs fields when done taking apointmenst
 
 
