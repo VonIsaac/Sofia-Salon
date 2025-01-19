@@ -42,3 +42,9 @@ if (getUserId()) {
         location.reload(); 
     });
 }
+
+if(!getUserId()){
+    const profile = document.querySelector('.a-profile');
+
+    profile.style.display = "none";
+}
