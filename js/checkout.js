@@ -138,7 +138,7 @@ function displayCheckout(data) {
           
         });
 
-        btnsDiv.appendChild(editBtn);
+       
 
         // Create the delete button
         const deleteBtn = document.createElement('button');
@@ -170,6 +170,7 @@ function displayCheckout(data) {
             });
 
             btnsDiv.appendChild(payBtn);
+            btnsDiv.appendChild(editBtn);
         }
 
 

@@ -70,7 +70,7 @@ document.querySelector('.form-appointment').addEventListener('submit', async (e)
                 customer_name: name,
                 phone_number: number,
                 appointment_date: date,
-                //user_id: userId,
+                user_id: userId,
                 service_id: serviceId
             })
         });
