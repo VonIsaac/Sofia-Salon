@@ -148,6 +148,7 @@ h1 {
 }
 
 .checkout-item {
+    position: relative;
     background-color: white; 
     border: 1px solid #dee2e6;
     border-radius: 8px; 
